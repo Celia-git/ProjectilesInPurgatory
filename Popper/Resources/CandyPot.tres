@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://druf3375rasc1" path="res://Assets/Popper.png" id="1_eojej"]
+
+[resource]
+atlas = ExtResource("1_eojej")
+region = Rect2(256, 0, 112, 112)
+margin = Rect2(1, 1, 0, 0)

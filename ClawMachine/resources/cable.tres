@@ -1,0 +1,15 @@
+[gd_resource type="AnimatedTexture" load_steps=4 format=3 uid="uid://bbk3bxqovv2ui"]
+
+[ext_resource type="Texture2D" uid="uid://2pk3orvhpbq5" path="res://Assets/claw_cable0.png" id="1_da3io"]
+[ext_resource type="Texture2D" uid="uid://denahdheimbgv" path="res://Assets/claw_cable1.png" id="2_1exy6"]
+[ext_resource type="Texture2D" uid="uid://cl4t76x8vc8be" path="res://Assets/claw_cable2.png" id="3_j5agn"]
+
+[resource]
+frames = 3
+pause = true
+frame_0/texture = ExtResource("1_da3io")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_1exy6")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_j5agn")
+frame_2/duration = 0.1

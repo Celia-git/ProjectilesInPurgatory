@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://y1be1y41piq2"
+path="res://.godot/imported/portals_0_1_click_mask.bmp-2f448d3ebcf1eb5c8518199e3983fdc0.res"
+
+[deps]
+
+source_file="res://Assets/portals_0_1_click_mask.bmp"
+dest_files=["res://.godot/imported/portals_0_1_click_mask.bmp-2f448d3ebcf1eb5c8518199e3983fdc0.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

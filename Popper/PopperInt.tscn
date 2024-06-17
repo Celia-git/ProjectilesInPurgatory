@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://8ut7xqjwwaf"]
+
+[ext_resource type="Script" path="res://Popper/PopperInt.gd" id="1_f2bmk"]
+[ext_resource type="PackedScene" uid="uid://cmbbvtyxdyvd8" path="res://Maps/PixelWorld.tscn" id="2_h6k6u"]
+[ext_resource type="Texture2D" uid="uid://t5k46f6csdsj" path="res://Assets/Backgrounds/PopperGameInt.png" id="2_p5jjf"]
+
+[node name="PopperInt" type="ParallaxBackground"]
+script = ExtResource("1_f2bmk")
+
+[node name="Background" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+centered = false
+offset = Vector2(320, 218)
+
+[node name="Transition" type="Sprite2D" parent="Background"]
+visible = false
+centered = false
+offset = Vector2(320, 218)
+
+[node name="PixelWorld" parent="." instance=ExtResource("2_h6k6u")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 218.0
+offset_right = -960.0
+offset_bottom = -502.0
+
+[node name="Frame" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Frame"]
+texture = ExtResource("2_p5jjf")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_right = 0.599854
+offset_bottom = 2.0
+mouse_filter = 1
+
+[node name="LeftButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 316.0
+offset_right = 279.0
+offset_bottom = 643.0
+mouse_filter = 1
+
+[node name="RightButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 318.0
+offset_right = 1485.0
+offset_bottom = 643.0
+mouse_filter = 1
+
+[node name="CarryOver" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Nodes" type="Node2D" parent="CarryOver"]
+top_level = true
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+
+[connection signal="mouse_entered" from="Control/LeftButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/LeftButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="mouse_entered" from="Control/RightButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/RightButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="child_entered_tree" from="CarryOver/Nodes" to="." method="_on_carryover_nodes_child_entered_tree"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5q8cbogqioou"]
+
+[ext_resource type="Script" path="res://Esther/DialogPieces/process_dialog.gd" id="1_qcu02"]
+[ext_resource type="Texture2D" uid="uid://ddfsqgcntf8np" path="res://Assets/custom_mouse1.png" id="2_l0ty3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qcu02")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+lifetime = 2.0
+texture = ExtResource("2_l0ty3")
+gravity = Vector2(0, 0)
+radial_accel_max = 360.0

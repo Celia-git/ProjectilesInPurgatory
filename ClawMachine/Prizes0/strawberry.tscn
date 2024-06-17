@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://84mm4rgetf32"]
+
+[ext_resource type="Texture2D" uid="uid://bggqajcjad822" path="res://Assets/prizes_0.png" id="1_morl1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72lv6"]
+atlas = ExtResource("1_morl1")
+region = Rect2(256, 32, 32, 32)
+
+[node name="plushie" type="RigidBody2D"]
+mass = 0.01
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -15, -13, -9, -14, -1, 0, 16, 15, 0, 11, -11)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_72lv6")

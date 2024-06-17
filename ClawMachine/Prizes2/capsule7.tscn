@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://8yoybimtovya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1tsp"]
+size = Vector2(16, 14.75)
+
+[node name="Capsule" type="RigidBody2D" groups=["treasure_chest"]]
+mass = 0.05
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["treasure_chest"]]
+shape = SubResource("RectangleShape2D_q1tsp")

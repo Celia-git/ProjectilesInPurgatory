@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmdfr2vci5gqx"]
+
+[ext_resource type="Script" path="res://ClawMachine/ClawMachine.gd" id="1_2n66c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu4yf"]
+size = Vector2(42, 295)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s67jn"]
+size = Vector2(73, 294)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u6r5"]
+size = Vector2(270, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lack0"]
+size = Vector2(320.5, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gvwu"]
+size = Vector2(8, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mccc"]
+size = Vector2(50, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b8fp"]
+size = Vector2(30, 9)
+
+[node name="Machine" type="Node2D"]
+script = ExtResource("1_2n66c")
+
+[node name="Frame" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame"]
+position = Vector2(-21, 93.5)
+shape = SubResource("RectangleShape2D_wu4yf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Frame"]
+position = Vector2(356.5, 93)
+shape = SubResource("RectangleShape2D_s67jn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Frame"]
+position = Vector2(185, 210.5)
+shape = SubResource("RectangleShape2D_6u6r5")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Frame"]
+position = Vector2(159.75, -27)
+shape = SubResource("RectangleShape2D_lack0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Frame"]
+position = Vector2(54, 136)
+shape = SubResource("RectangleShape2D_7gvwu")
+
+[node name="Dropbox" type="Area2D" parent="."]
+position = Vector2(25, 140)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropbox"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_5mccc")
+
+[node name="Arm" type="Node2D" parent="."]
+position = Vector2(15, 0)
+
+[node name="Top" type="StaticBody2D" parent="Arm"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm/Top"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_8b8fp")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2(175, 5)
+node_a = NodePath("../Arm/Top")
+bias = 0.5
+length = 160.0
+rest_length = 20.0
+stiffness = 2.5
+damping = 2.0
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="body_entered" from="Dropbox" to="." method="_on_dropbox_body_entered"]

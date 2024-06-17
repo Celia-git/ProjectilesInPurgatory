@@ -1,0 +1,400 @@
+[gd_scene load_steps=17 format=3 uid="uid://d0ffvsh7frfn0"]
+
+[ext_resource type="Script" path="res://ClawMachine/Claw.gd" id="1_mc66l"]
+[ext_resource type="Texture2D" uid="uid://dbm736sp1olmn" path="res://Assets/claw2_1.png" id="2_7fn47"]
+[ext_resource type="PhysicsMaterial" uid="uid://d3ogwym0a0ee4" path="res://ClawMachine/resources/rough_tip.tres" id="2_afpjo"]
+[ext_resource type="Texture2D" uid="uid://c1fkincl73w70" path="res://Assets/claw2_2.png" id="3_oeecl"]
+[ext_resource type="Texture2D" uid="uid://c7gguph7dx46r" path="res://Assets/claw2_3.png" id="4_smihq"]
+[ext_resource type="Texture2D" uid="uid://bhb1ktcsyy1s2" path="res://Assets/claw2_0.png" id="5_rmxie"]
+[ext_resource type="Texture2D" uid="uid://bchenomums7a4" path="res://Assets/claw2_attachment.png" id="7_x00pl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgoyi"]
+size = Vector2(3.53149, 23.4136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrcir"]
+size = Vector2(3.61733, 20.9491)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snr3t"]
+size = Vector2(18, 6)
+
+[sub_resource type="Animation" id="Animation_01gir"]
+resource_name = "close"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/RightShoulder:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.785398, 0.261799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/RightShoulder/RightArm:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.51844, 1.0472]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/LeftShoulder:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.35619, 2.87979]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/LeftShoulder/LeftArm:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.51844, -1.0472]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/LeftShoulder:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/RightShoulder:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2.38419e-07, 9.53674e-07), Vector2(-2, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TopCollision/Sprite2D:offset")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skeleton2D/LeftShoulder/LeftArm:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(21.2132, 9.53674e-05), Vector2(21, -1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Skeleton2D/RightShoulder/RightArm:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(21.2132, 1.41422), Vector2(22, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_645td"]
+resource_name = "open"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/RightShoulder:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.785398, 0.261799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/RightShoulder/RightArm:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.51844, 1.0472]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/LeftShoulder:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.35619, 2.87979]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/LeftShoulder/LeftArm:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.51844, -1.0472]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/LeftShoulder:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/RightShoulder:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2.38419e-07, 9.53674e-07), Vector2(-2, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TopCollision/Sprite2D:offset")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skeleton2D/LeftShoulder/LeftArm:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(21.2132, 9.53674e-05), Vector2(21, -1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Skeleton2D/RightShoulder/RightArm:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(21.2132, 1.41422), Vector2(22, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6o2r"]
+_data = {
+"close": SubResource("Animation_01gir"),
+"open": SubResource("Animation_645td")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psd47"]
+size = Vector2(4.25, 4.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jegvg"]
+size = Vector2(4.25, 4.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0sasi"]
+radius = 13.0
+
+[node name="Claw" type="RigidBody2D"]
+texture_filter = 1
+input_pickable = true
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 10)
+max_contacts_reported = 20
+contact_monitor = true
+script = ExtResource("1_mc66l")
+metadata/_edit_horizontal_guides_ = [-2.0]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="RightShoulder" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(-2.38419e-07, 9.53674e-07)
+rotation = 0.785398
+rest = Transform2D(0.707107, 0.707107, -0.707107, 0.707107, -2.38419e-07, 9.53674e-07)
+auto_calculate_length_and_angle = false
+length = 24.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+
+[node name="RightArm" type="Bone2D" parent="Skeleton2D/RightShoulder"]
+position = Vector2(21.2132, 1.41422)
+rotation = 1.51844
+rest = Transform2D(0.0523324, 0.99863, -0.99863, 0.0523324, 21.2132, 1.41422)
+auto_calculate_length_and_angle = false
+length = 20.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+
+[node name="Tip2" type="StaticBody2D" parent="Skeleton2D/RightShoulder/RightArm"]
+position = Vector2(9.53674e-07, -1.90735e-06)
+collision_layer = 2
+collision_mask = 2
+physics_material_override = ExtResource("2_afpjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/RightShoulder/RightArm/Tip2"]
+position = Vector2(7.54397, -0.765776)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_tgoyi")
+
+[node name="LeftShoulder" type="Bone2D" parent="Skeleton2D"]
+rotation = 2.35619
+rest = Transform2D(-0.707104, 0.70711, -0.70711, -0.707104, 0, 0)
+auto_calculate_length_and_angle = false
+length = 24.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+
+[node name="LeftArm" type="Bone2D" parent="Skeleton2D/LeftShoulder"]
+position = Vector2(21.2132, 9.53674e-05)
+rotation = -1.51844
+rest = Transform2D(0.0523324, -0.99863, 0.99863, 0.0523324, 21.2132, 9.53674e-05)
+auto_calculate_length_and_angle = false
+length = 20.0
+bone_angle = 0.0
+editor_settings/show_bone_gizmo = false
+
+[node name="Tip1" type="StaticBody2D" parent="Skeleton2D/LeftShoulder/LeftArm"]
+position = Vector2(9.53674e-07, 0)
+collision_layer = 2
+collision_mask = 2
+physics_material_override = ExtResource("2_afpjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D/LeftShoulder/LeftArm/Tip1"]
+position = Vector2(9.93086, -0.190296)
+rotation = -1.54985
+shape = SubResource("RectangleShape2D_xrcir")
+
+[node name="TopCollision" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = ExtResource("2_afpjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCollision"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_snr3t")
+debug_color = Color(0, 0.6, 0.701961, 0.101961)
+
+[node name="Sprite2D" type="Sprite2D" parent="TopCollision"]
+texture = ExtResource("7_x00pl")
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(0, 3)
+metadata/_edit_group_ = true
+
+[node name="LeftArm" type="Polygon2D" parent="Polygons"]
+position = Vector2(-18, 13)
+texture = ExtResource("3_oeecl")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(6.97744, -0.211623, 0.512516, -0.280398, 0.581295, 2.33308, 15.9871, 17.9452, 18.463, 17.7389, 19.1508, 12.0992)
+uv = PackedVector2Array(6.97744, -0.211623, 0.512516, -0.280398, 0.581295, 2.33308, 15.9871, 17.9452, 18.463, 17.7389, 19.1508, 12.0992)
+bones = ["RightShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0), "RightShoulder/RightArm", PackedFloat32Array(0, 0, 0, 0, 0, 0), "LeftShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0), "LeftShoulder/LeftArm", PackedFloat32Array(1, 1, 1, 1, 1, 1)]
+
+[node name="RightArm" type="Polygon2D" parent="Polygons"]
+position = Vector2(0, 13)
+texture = ExtResource("4_smihq")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(18.9444, -0.0740709, 14.5428, -0.00529575, 5.25805, 9.41699, 2.43824, 9.62331, -0.587894, 13.1997, -0.450344, 15.6068, 2.78212, 18.014, 19.6322, 2.19553)
+uv = PackedVector2Array(18.9444, -0.0740709, 14.5428, -0.00529575, 5.25805, 9.41699, 2.43824, 9.62331, -0.587894, 13.1997, -0.450344, 15.6068, 2.78212, 18.014, 19.6322, 2.19553)
+bones = ["RightShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "RightShoulder/RightArm", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "LeftShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "LeftShoulder/LeftArm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="LeftShoulder" type="Polygon2D" parent="Polygons"]
+position = Vector2(-18, 0)
+texture = ExtResource("5_rmxie")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(17.2938, -0.349174, 11.3791, -0.417951, -0.106464, 14.025, 8.28418, 14.3688, 17.6377, 6.04697)
+uv = PackedVector2Array(17.2938, -0.349174, 11.3791, -0.417951, -0.106464, 14.025, 8.28418, 14.3688, 17.6377, 6.04697)
+bones = ["RightShoulder", PackedFloat32Array(0, 0, 0, 0, 0), "RightShoulder/RightArm", PackedFloat32Array(0, 0, 0, 0, 0), "LeftShoulder", PackedFloat32Array(1, 1, 1, 1, 1), "LeftShoulder/LeftArm", PackedFloat32Array(0, 0, 0, 0, 0)]
+
+[node name="RightShoulder" type="Polygon2D" parent="Polygons/LeftShoulder"]
+position = Vector2(18, 0)
+texture = ExtResource("2_7fn47")
+skeleton = NodePath("../../../Skeleton2D")
+polygon = PackedVector2Array(9.86602, -0.349174, 2.64457, -0.349174, 2.64457, 5.7031, 13.5111, 14.7815, 19.4259, 14.7815, 19.4259, 14.7815, 19.4946, 11.1364)
+uv = PackedVector2Array(9.86602, -0.349174, 2.64457, -0.349174, 2.64457, 5.7031, 13.5111, 14.7815, 19.4259, 14.7815, 19.4259, 14.7815, 19.4946, 11.1364)
+bones = ["RightShoulder", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1), "RightShoulder/RightArm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "LeftShoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "LeftShoulder/LeftArm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_h6o2r")
+}
+
+[node name="Weight" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 15)
+shape = SubResource("RectangleShape2D_psd47")
+disabled = true
+
+[node name="Weight2" type="CollisionShape2D" parent="."]
+position = Vector2(16, 15)
+shape = SubResource("RectangleShape2D_jegvg")
+disabled = true
+
+[node name="grab" type="Area2D" parent="."]
+position = Vector2(0, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grab"]
+position = Vector2(1, -2)
+shape = SubResource("CircleShape2D_0sasi")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

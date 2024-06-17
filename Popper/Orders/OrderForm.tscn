@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" uid="uid://ftmpj1su44e3" path="res://UI/order_theme.tres" id="1_336oe"]
+[ext_resource type="Script" path="res://Popper/Orders/OrderForm.gd" id="1_xq328"]
+
+[node name="OrderForm" type="VBoxContainer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.2
+offset_right = -320.0
+offset_bottom = -479.7
+size_flags_vertical = 0
+theme = ExtResource("1_336oe")
+alignment = 1
+script = ExtResource("1_xq328")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://hjtja737brrm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i71tq"]
+size = Vector2(16.4063, 7.03125)
+
+[node name="Toy" type="RigidBody2D"]
+mass = 0.05
+metadata/icon_region = Rect2(56, 0, 28, 28)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i71tq")

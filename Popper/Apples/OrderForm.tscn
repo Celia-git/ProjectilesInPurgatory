@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://xgaoxlmj5hgq"]
+
+[ext_resource type="Script" path="res://Popper/Orders/OrderForm.gd" id="1_tb4rr"]
+
+[node name="OrderForm" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tb4rr")

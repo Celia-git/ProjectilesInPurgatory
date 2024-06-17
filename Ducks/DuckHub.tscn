@@ -1,0 +1,163 @@
+[gd_scene load_steps=13 format=3 uid="uid://2yiie1epeby1"]
+
+[ext_resource type="Script" path="res://Ducks/DuckHub.gd" id="1_76oaf"]
+[ext_resource type="LabelSettings" uid="uid://c2j5clm8mp8ma" path="res://UI/LabelSettings.tres" id="2_cks17"]
+[ext_resource type="Texture2D" uid="uid://crrwfwnaxmpsi" path="res://Assets/Ducks.png" id="2_uqsr3"]
+[ext_resource type="Texture2D" uid="uid://b4aaxi1fyvtff" path="res://Assets/pool.png" id="3_p54yo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dl2vx"]
+texture = ExtResource("2_uqsr3")
+7:0/animation_columns = 5
+7:0/animation_frame_0/duration = 0.5
+7:0/animation_frame_1/duration = 0.5
+7:0/animation_frame_2/duration = 0.5
+7:0/animation_frame_3/duration = 0.5
+7:0/animation_frame_4/duration = 0.5
+7:0/animation_frame_5/duration = 0.5
+7:0/animation_frame_6/duration = 0.5
+7:0/animation_frame_7/duration = 0.5
+7:0/animation_frame_8/duration = 0.5
+7:0/animation_frame_9/duration = 0.5
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yirae"]
+sources/0 = SubResource("TileSetAtlasSource_dl2vx")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_auc1t"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gvqtn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qctdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsgmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vnxd"]
+size = Vector2(32, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8sx8"]
+
+[node name="DuckHub" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_76oaf")
+
+[node name="WaterTiles" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_yirae")
+format = 2
+layer_0/tile_data = PackedInt32Array(589829, 458752, 0, 589830, 458752, 0, 589831, 458752, 0, 589832, 458752, 0, 589833, 458752, 0, 589834, 458752, 0, 589835, 458752, 0, 589836, 458752, 0, 589837, 458752, 0, 196618, 458752, 0, 131082, 458752, 0, 131077, 458752, 0, 196613, 458752, 0, 262149, 458752, 0, 327685, 458752, 0, 393221, 458752, 0, 458757, 458752, 0, 524293, 458752, 0, 524294, 458752, 0, 458758, 458752, 0, 393222, 458752, 0, 327686, 458752, 0, 262150, 458752, 0, 196614, 458752, 0, 131078, 458752, 0, 131079, 458752, 0, 196615, 458752, 0, 262151, 458752, 0, 327687, 458752, 0, 393223, 458752, 0, 458759, 458752, 0, 524295, 458752, 0, 524296, 458752, 0, 458760, 458752, 0, 393224, 458752, 0, 327688, 458752, 0, 262152, 458752, 0, 196616, 458752, 0, 131080, 458752, 0, 131081, 458752, 0, 196617, 458752, 0, 262153, 458752, 0, 327689, 458752, 0, 393225, 458752, 0, 458761, 458752, 0, 524297, 458752, 0, 524298, 458752, 0, 458762, 458752, 0, 393226, 458752, 0, 327690, 458752, 0, 262154, 458752, 0, 262155, 458752, 0, 196619, 458752, 0, 131083, 458752, 0, 131084, 458752, 0, 196620, 458752, 0, 262156, 458752, 0, 327692, 458752, 0, 327691, 458752, 0, 393227, 458752, 0, 458763, 458752, 0, 524299, 458752, 0, 524300, 458752, 0, 458764, 458752, 0, 393228, 458752, 0, 393229, 458752, 0, 327693, 458752, 0, 262157, 458752, 0, 196621, 458752, 0, 131085, 458752, 0, 458765, 458752, 0, 524301, 458752, 0, 589838, 458752, 0, 524302, 458752, 0, 458766, 458752, 0, 393230, 458752, 0, 327694, 458752, 0, 262158, 458752, 0, 196622, 458752, 0, 131086, 458752, 0, 65550, 458752, 0, 65549, 458752, 0, 65548, 458752, 0, 65547, 458752, 0, 65546, 458752, 0, 65545, 458752, 0, 65544, 458752, 0, 65543, 458752, 0, 65542, 458752, 0, 65541, 458752, 0, 655374, 458752, 0, 655373, 458752, 0, 655372, 458752, 0, 655371, 458752, 0, 655370, 458752, 0, 655365, 458752, 0, 655366, 458752, 0, 655367, 458752, 0, 655368, 458752, 0, 655369, 458752, 0)
+
+[node name="Pool" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pool"]
+rotation = 1.5708
+shape = SubResource("CircleShape2D_auc1t")
+
+[node name="PoolWalls" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_gvqtn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PoolWalls"]
+build_mode = 1
+polygon = PackedVector2Array(-7, -9, -3, -11, 2, -11, 5, -10, 9, -7, 10, -5, 11, 0, 10, 4, 7, 9, 1, 11, -5, 10, -10, 5, -11, 2, -11, -2, -10, -6, -7, -9, -6, -8, -9, -5, -10, -2, -10, 2, -9, 5, -5, 9, 1, 10, 6, 8, 9, 4, 10, 0, 9, -5, 7, -7, 5, -9, 0, -10, -4, -9, -6, -8)
+
+[node name="WhirlPool" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WhirlPool"]
+shape = SubResource("CircleShape2D_qctdi")
+
+[node name="PoolTexture" type="Sprite2D" parent="."]
+texture = ExtResource("3_p54yo")
+centered = false
+
+[node name="Duck1" type="Area2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Duck1"]
+
+[node name="Icon" type="Sprite2D" parent="Duck1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Duck1"]
+shape = SubResource("RectangleShape2D_tsgmy")
+
+[node name="Free" type="Area2D" parent="Duck1"]
+position = Vector2(0, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Duck1/Free"]
+shape = SubResource("RectangleShape2D_2vnxd")
+
+[node name="Duck0" type="Area2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Duck0"]
+
+[node name="Icon" type="Sprite2D" parent="Duck0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Duck0"]
+shape = SubResource("RectangleShape2D_n8sx8")
+
+[node name="Free" type="Area2D" parent="Duck0"]
+position = Vector2(0, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Duck0/Free"]
+shape = SubResource("RectangleShape2D_2vnxd")
+
+[node name="MatchAlert" type="PopupPanel" parent="."]
+size = Vector2i(450, 100)
+always_on_top = true
+min_size = Vector2i(450, 100)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MatchAlert"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MatchAlert/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MatchAlert/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Match Found!"
+label_settings = ExtResource("2_cks17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinAlert" type="PopupPanel" parent="."]
+size = Vector2i(553, 106)
+
+[node name="Color" type="HBoxContainer" parent="WinAlert"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 541.0
+offset_bottom = 94.0
+
+[node name="Label" type="Label" parent="WinAlert/Color"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "You Won!"
+label_settings = ExtResource("2_cks17")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="WinAlert/Color"]
+layout_mode = 2
+mouse_filter = 1
+text = "Go Again?"
+
+[connection signal="input_event" from="Duck1/Free" to="." method="_on_free_input_event" binds= [1]]
+[connection signal="mouse_entered" from="Duck1/Free" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Duck1/Free" to="." method="_on_mouse_exited"]
+[connection signal="input_event" from="Duck0/Free" to="." method="_on_free_input_event" binds= [0]]
+[connection signal="mouse_entered" from="Duck0/Free" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Duck0/Free" to="." method="_on_mouse_exited"]

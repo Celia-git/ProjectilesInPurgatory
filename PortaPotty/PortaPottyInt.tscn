@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://hme3cdydjfe"]
+
+[ext_resource type="Script" path="res://PortaPotty/PortaPottyInt.gd" id="1_ie7ce"]
+
+[node name="PortaPottyInt" type="ParallaxBackground"]
+script = ExtResource("1_ie7ce")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_right = 0.599854
+offset_bottom = 2.0
+mouse_filter = 1
+
+[node name="LeftButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 302.0
+offset_right = 215.0
+offset_bottom = 675.0
+mouse_filter = 1
+
+[node name="RightButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1393.0
+offset_top = 304.0
+offset_right = 1519.0
+offset_bottom = 677.0
+mouse_filter = 1
+
+[node name="CarryOver" type="CanvasLayer" parent="."]
+
+[node name="Nodes" type="Node2D" parent="CarryOver"]
+texture_filter = 1

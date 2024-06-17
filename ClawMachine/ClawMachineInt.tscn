@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceq2xnpe8w4n1"]
+
+[ext_resource type="Script" path="res://ClawMachine/ClawMachineInt.gd" id="1_qtv62"]
+[ext_resource type="PackedScene" uid="uid://cmbbvtyxdyvd8" path="res://Maps/PixelWorld.tscn" id="2_8uatj"]
+
+[node name="ClawMachineInt" type="ParallaxBackground"]
+script = ExtResource("1_qtv62")
+
+[node name="Background" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+centered = false
+
+[node name="PixelWorld" parent="." instance=ExtResource("2_8uatj")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 200.0
+offset_right = -960.0
+offset_bottom = -520.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Frame"]
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="LeftButton" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 64)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 305.0
+offset_right = 143.0
+offset_bottom = 678.0
+mouse_filter = 1
+
+[node name="RightButton" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 64)
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 299.0
+offset_right = 1574.0
+offset_bottom = 672.0
+mouse_filter = 1
+
+[node name="CarryOver" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Nodes" type="Node2D" parent="CarryOver"]
+top_level = true
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+
+[connection signal="mouse_entered" from="Control/LeftButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/LeftButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="mouse_entered" from="Control/RightButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/RightButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/RightButton" to="." method="_on_right_button_pressed"]

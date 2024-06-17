@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwbwlbw3fy1i0"]
+
+[ext_resource type="Script" path="res://IceCream/Orders/OrderTracker.gd" id="1_58hn2"]
+[ext_resource type="Texture2D" uid="uid://csi7mku0u2o5l" path="res://Assets/Backgrounds/Notepad (1).jpg" id="2_wtguf"]
+
+[node name="OrderTracker" type="PanelContainer"]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+script = ExtResource("1_58hn2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(1600, 900)
+layout_mode = 2
+texture = ExtResource("2_wtguf")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="ViewOrders" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="NewOrder" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 1
+text = "+"
+
+[node name="ExpandAll" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "*"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="NewOrder" to="." method="_on_new_order_pressed"]
+[connection signal="pressed" from="ExpandAll" to="." method="_on_expand_all_pressed"]

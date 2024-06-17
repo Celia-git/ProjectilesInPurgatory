@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2qnjuwk563su"]
+
+[ext_resource type="FontFile" uid="uid://bhfehf41n51ck" path="res://Fonts/Somelove.otf" id="1_bjoa4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l7jpj"]
+load_path = "res://.godot/imported/profile_text_icons.png-90ea89d76887a378714aae7ddcdbf2eb.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vauwd"]
+texture = SubResource("CompressedTexture2D_l7jpj")
+region_rect = Rect2(68, 49, 504, 84)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sr7p6"]
+load_path = "res://.godot/imported/profile_text_icons.png-90ea89d76887a378714aae7ddcdbf2eb.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngsur"]
+texture = SubResource("CompressedTexture2D_sr7p6")
+region_rect = Rect2(56, 201, 527, 100)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hj3fa"]
+load_path = "res://.godot/imported/profile_text_icons.png-90ea89d76887a378714aae7ddcdbf2eb.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_60fvb"]
+texture = SubResource("CompressedTexture2D_hj3fa")
+region_rect = Rect2(63, 366, 510, 89)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_piibk"]
+
+[node name="signature" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0.341176, 1)
+theme_override_fonts/font = ExtResource("1_bjoa4")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_vauwd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ngsur")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_60fvb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_piibk")

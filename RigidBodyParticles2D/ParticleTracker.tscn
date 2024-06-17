@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://wfvmy1q0ntyy"]
+
+[ext_resource type="Script" path="res://RigidBodyParticles2D/ParticleTracker.gd" id="1_ugjul"]
+
+[node name="ParticleTracker" type="Node2D"]
+script = ExtResource("1_ugjul")
+
+[node name="Remover" type="Timer" parent="."]
+one_shot = true

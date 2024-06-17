@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb52cixrmono"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ardu"]
+size = Vector2(9.64063, 5.59375)
+
+[node name="Candy" type="RigidBody2D"]
+mass = 0.05
+metadata/weight = 0.59
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2ardu")

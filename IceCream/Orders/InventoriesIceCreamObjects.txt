@@ -1,0 +1,11 @@
+Name/Basis/Syrup/Milk/Topping/Whipped Cream/
+Cake Cone/Ice Cream/False/False/False/False/
+Waffle Cone Plain/Ice Cream/True/False/True/True/
+Waffle Cone Pink/Ice Cream/True/False/True/True/
+Waffle Cone Nuts/Ice Cream/True/False/True/True/
+Waffle Cone Oreos/Ice Cream/True/False/True/True/
+Waffle Cone Rainbow/Ice Cream/True/False/True/True/
+Float/Ice Cream, Soda/True/False/False/False/
+Shake/Ice Cream/True/True/True/True/
+Soda/Soda/True/False/False/False/
+Blizzie/Ice Cream/True/False/True/True/

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://btcndwnny6dxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imu4s"]
+size = Vector2(4, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijpfu"]
+size = Vector2(6, 2)
+
+[node name="Bottle" type="Area2D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_imu4s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 1)
+centered = false
+offset = Vector2(-9, -30)
+
+[node name="Clear" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clear"]
+position = Vector2(0, -27)
+shape = SubResource("RectangleShape2D_ijpfu")

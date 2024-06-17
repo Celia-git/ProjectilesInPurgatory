@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bla0rbeu2sitf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ngrqo"]
+radius = 3.0
+
+[node name="Toy" type="RigidBody2D"]
+mass = 0.05
+metadata/icon_region = Rect2(48, 84, 24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ngrqo")

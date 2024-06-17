@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs7rvsq5djurv"]
+
+[ext_resource type="Script" path="res://StarrySky/TelescopeInt.gd" id="1_0xg77"]
+[ext_resource type="PackedScene" uid="uid://cmbbvtyxdyvd8" path="res://Maps/PixelWorld.tscn" id="1_nsk5q"]
+
+[node name="TelescopeInt" type="ParallaxBackground"]
+script = ExtResource("1_0xg77")
+
+[node name="Background" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+
+[node name="PixelWorld" parent="." instance=ExtResource("1_nsk5q")]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 218.0
+offset_right = -960.0
+offset_bottom = -502.0

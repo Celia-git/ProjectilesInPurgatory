@@ -1,0 +1,220 @@
+[gd_scene load_steps=12 format=3 uid="uid://dd4vjpmqxy0ar"]
+
+[ext_resource type="Script" path="res://Gumball/GumballMachine.gd" id="1_jertf"]
+[ext_resource type="Texture2D" uid="uid://bya402mje1a17" path="res://Assets/Backgrounds/gumball_animation_background.png" id="2_wepc5"]
+[ext_resource type="SpriteFrames" uid="uid://ceqmt1oxbusnv" path="res://Gumball/gumball_sprite_frames.tres" id="3_ikrjb"]
+[ext_resource type="Texture2D" uid="uid://cx3345r5ns4ux" path="res://Assets/Backgrounds/gumball_animation_foreground.png" id="4_sa7dl"]
+[ext_resource type="Texture2D" uid="uid://d4nlk8s8dcbbu" path="res://Assets/Backgrounds/gumball_animation_guideline.png" id="5_8h61c"]
+[ext_resource type="Texture2D" uid="uid://b8pu6wiu20nw5" path="res://Assets/Backgrounds/GumballMachine.png" id="6_o8nc5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y01xd"]
+radius = 16.0
+height = 78.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eeju8"]
+size = Vector2(1623, 20)
+
+[sub_resource type="Animation" id="Animation_oy68c"]
+resource_name = "shift_camera_down"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1, 5.1, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(800, -175), Vector2(800, 100), Vector2(800, 350), Vector2(800, 1100)]
+}
+
+[sub_resource type="Animation" id="Animation_ml6rd"]
+resource_name = "shift_camera_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 1100), Vector2(800, -175)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p5pyq"]
+_data = {
+"shift_camera_down": SubResource("Animation_oy68c"),
+"shift_camera_up": SubResource("Animation_ml6rd")
+}
+
+[node name="GumballMachine" type="ParallaxBackground" groups=["Cinematic"]]
+follow_viewport_enabled = true
+script = ExtResource("1_jertf")
+metadata/_edit_vertical_guides_ = []
+
+[node name="Background" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+
+[node name="Gumball Machine" type="Node2D" parent="."]
+position = Vector2(800, 500)
+
+[node name="Outline" type="Sprite2D" parent="Gumball Machine"]
+visible = false
+texture = ExtResource("5_8h61c")
+
+[node name="Background" type="Sprite2D" parent="Gumball Machine"]
+texture = ExtResource("2_wepc5")
+
+[node name="Animation" type="Node2D" parent="Gumball Machine"]
+
+[node name="Gumball0" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+position = Vector2(6, -270)
+sprite_frames = ExtResource("3_ikrjb")
+speed_scale = 0.7
+
+[node name="Gumball0_1" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, -270)
+sprite_frames = ExtResource("3_ikrjb")
+offset = Vector2(0, 50)
+
+[node name="Gumball1" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, -170)
+sprite_frames = ExtResource("3_ikrjb")
+
+[node name="Gumball1_2" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, -170)
+sprite_frames = ExtResource("3_ikrjb")
+offset = Vector2(0, 50)
+
+[node name="Gumball2" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, -70)
+sprite_frames = ExtResource("3_ikrjb")
+
+[node name="Gumball2_3" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, -70)
+sprite_frames = ExtResource("3_ikrjb")
+offset = Vector2(0, 50)
+
+[node name="Gumball3" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, 30)
+sprite_frames = ExtResource("3_ikrjb")
+
+[node name="Gumball3_4" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, 30)
+sprite_frames = ExtResource("3_ikrjb")
+offset = Vector2(0, 50)
+
+[node name="Gumball4" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, 130)
+sprite_frames = ExtResource("3_ikrjb")
+
+[node name="Gumball4_5" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, 130)
+sprite_frames = ExtResource("3_ikrjb")
+offset = Vector2(0, 50)
+
+[node name="Gumball5_6" type="AnimatedSprite2D" parent="Gumball Machine/Animation"]
+unique_name_in_owner = true
+position = Vector2(6, 230)
+sprite_frames = ExtResource("3_ikrjb")
+offset = Vector2(0, 50)
+
+[node name="ForegroundGlass" type="Sprite2D" parent="Gumball Machine"]
+texture = ExtResource("4_sa7dl")
+
+[node name="ForegroundMachine" type="Sprite2D" parent="Gumball Machine"]
+texture = ExtResource("6_o8nc5")
+offset = Vector2(13, 47)
+
+[node name="Switch" type="Area2D" parent="Gumball Machine"]
+position = Vector2(15, -430)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gumball Machine/Switch"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_y01xd")
+
+[node name="Flap" type="Sprite2D" parent="Gumball Machine"]
+position = Vector2(-0.5, 397.5)
+
+[node name="PixelEnv" type="Node2D" parent="."]
+texture_filter = 1
+
+[node name="Ground" type="StaticBody2D" parent="PixelEnv" groups=["ground"]]
+position = Vector2(0, 1500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PixelEnv/Ground"]
+position = Vector2(810, 55)
+shape = SubResource("RectangleShape2D_eeju8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(800, -175)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 33.0
+offset_right = 20.5999
+offset_bottom = 35.0
+mouse_filter = 1
+
+[node name="LeftButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 302.0
+offset_right = 215.0
+offset_bottom = 675.0
+mouse_filter = 1
+
+[node name="RightButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1393.0
+offset_top = 304.0
+offset_right = 1519.0
+offset_bottom = 677.0
+mouse_filter = 1
+
+[node name="CarryOver" type="CanvasLayer" parent="."]
+
+[node name="Nodes" type="Control" parent="CarryOver"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_p5pyq")
+}
+
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+bus = &"Sound Effects"
+
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball0" to="." method="_on_gumball_animation_finished" binds= ["0_1"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball0_1" to="." method="_on_gumball_animation_finished" binds= ["1"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball1" to="." method="_on_gumball_animation_finished" binds= ["1_2"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball1_2" to="." method="_on_gumball_animation_finished" binds= ["2"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball2" to="." method="_on_gumball_animation_finished" binds= ["2_3"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball2_3" to="." method="_on_gumball_animation_finished" binds= ["3"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball3" to="." method="_on_gumball_animation_finished" binds= ["3_4"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball3_4" to="." method="_on_gumball_animation_finished" binds= ["4"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball4" to="." method="_on_gumball_animation_finished" binds= ["4_5"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball4_5" to="." method="_on_gumball_animation_finished" binds= ["5_6"]]
+[connection signal="animation_finished" from="Gumball Machine/Animation/Gumball5_6" to="." method="_on_gumball_sequence_finished"]
+[connection signal="input_event" from="Gumball Machine/Switch" to="." method="_on_switch_input_event"]
+[connection signal="mouse_entered" from="Gumball Machine/Switch" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Gumball Machine/Switch" to="." method="_on_button_mouse_exited"]

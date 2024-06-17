@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4rm07nntkssb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eub80"]
+radius = 4.0
+
+[node name="Candy" type="RigidBody2D"]
+mass = 0.05
+metadata/weight = 0.75
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eub80")

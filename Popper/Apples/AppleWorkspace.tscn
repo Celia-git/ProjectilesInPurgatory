@@ -1,0 +1,363 @@
+[gd_scene load_steps=37 format=3 uid="uid://cht380fuafabe"]
+
+[ext_resource type="Script" path="res://Popper/Apples/AppleWorkspace.gd" id="1_6pwdd"]
+[ext_resource type="Texture2D" path="res://Popper/Resources/CaramelPot.tres" id="2_6bsyu"]
+[ext_resource type="Texture2D" uid="uid://druf3375rasc1" path="res://Assets/Popper.png" id="3_g1c66"]
+[ext_resource type="Texture2D" path="res://Popper/Resources/CandyPot.tres" id="4_e22jn"]
+[ext_resource type="Texture2D" uid="uid://slapn5i2mmin" path="res://Popper/Apples/PotFrame.tres" id="4_g6xsm"]
+[ext_resource type="PackedScene" uid="uid://cjqelj2ijnd7e" path="res://Popper/Apples/Toppings.tscn" id="5_2c1iv"]
+[ext_resource type="Script" path="res://Popper/Apples/AppleStand.gd" id="5_n46w4"]
+[ext_resource type="LabelSettings" uid="uid://c2j5clm8mp8ma" path="res://UI/LabelSettings.tres" id="8_ym860"]
+[ext_resource type="Texture2D" uid="uid://c4h3aipo0ok01" path="res://UI/LeftArrow.tres" id="9_7t6dd"]
+[ext_resource type="Texture2D" uid="uid://ciy7oel6thya7" path="res://UI/RightArrow.tres" id="10_4vljp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t3gc"]
+size = Vector2(67, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgwa4"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(0, 256, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wklec"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(64, 256, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5eb0"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(128, 256, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xa4h"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(192, 256, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02eah"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(0, 288, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7euns"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(64, 288, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oltla"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(128, 288, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qad78"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(192, 288, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vksxi"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(0, 320, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1hcs"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(64, 320, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c55le"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(128, 320, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyayj"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(192, 320, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnutl"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(0, 352, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c25qe"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(64, 352, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u7lx"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(128, 352, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5anf6"]
+atlas = ExtResource("3_g1c66")
+region = Rect2(192, 352, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1f6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgwa4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wklec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5eb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xa4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02eah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7euns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oltla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qad78")
+}],
+"loop": false,
+"name": &"RipplesCandy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vksxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1hcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c55le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyayj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnutl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c25qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u7lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5anf6")
+}],
+"loop": false,
+"name": &"RipplesCaramel",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucn8d"]
+size = Vector2(71, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlw3b"]
+size = Vector2(320, 30)
+
+[sub_resource type="Animation" id="Animation_t7t1i"]
+resource_name = "shift_to_pots"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pots:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-320, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Toppings:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 15), Vector2(320, 15)]
+}
+
+[sub_resource type="Animation" id="Animation_qcqvl"]
+resource_name = "shift_to_toppings"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pots:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-320, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Toppings:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, 15), Vector2(0, 15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fk7ax"]
+_data = {
+"shift_to_pots": SubResource("Animation_t7t1i"),
+"shift_to_toppings": SubResource("Animation_qcqvl")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4xu1"]
+size = Vector2(16.75, 179)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xr2dw"]
+size = Vector2(19, 172)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iowj"]
+
+[node name="Workspace" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_6pwdd")
+
+[node name="Pots" type="Node2D" parent="."]
+
+[node name="CaramelPot" type="Area2D" parent="Pots"]
+position = Vector2(80, 110)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Pots/CaramelPot"]
+texture = ExtResource("2_6bsyu")
+offset = Vector2(7, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pots/CaramelPot"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_0t3gc")
+
+[node name="Ripples" type="AnimatedSprite2D" parent="Pots/CaramelPot"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_f1f6g")
+animation = &"RipplesCaramel"
+
+[node name="Frame" type="Sprite2D" parent="Pots/CaramelPot"]
+texture = ExtResource("4_g6xsm")
+offset = Vector2(0, 3)
+
+[node name="CandyPot" type="Area2D" parent="Pots"]
+position = Vector2(240, 110)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Contents" type="Sprite2D" parent="Pots/CandyPot"]
+texture = ExtResource("4_e22jn")
+offset = Vector2(6, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pots/CandyPot"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_ucn8d")
+
+[node name="Ripples" type="AnimatedSprite2D" parent="Pots/CandyPot"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_f1f6g")
+animation = &"RipplesCandy"
+
+[node name="Frame" type="Sprite2D" parent="Pots/CandyPot"]
+texture = ExtResource("4_g6xsm")
+offset = Vector2(0, 3)
+
+[node name="Toppings" parent="." instance=ExtResource("5_2c1iv")]
+position = Vector2(320, 15)
+
+[node name="AppleStand" type="Node2D" parent="."]
+position = Vector2(0, 7)
+script = ExtResource("5_n46w4")
+
+[node name="Area2D" type="Area2D" parent="AppleStand"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AppleStand/Area2D"]
+position = Vector2(160, 16)
+shape = SubResource("RectangleShape2D_hlw3b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fk7ax")
+}
+
+[node name="TrashWarning" type="PopupPanel" parent="."]
+initial_position = 2
+size = Vector2i(344, 201)
+
+[node name="GridContainer" type="GridContainer" parent="TrashWarning"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 332.0
+offset_bottom = 189.0
+columns = 3
+
+[node name="Label" type="Label" parent="TrashWarning/GridContainer"]
+layout_mode = 2
+text = "you want to 
+trash this
+apple?"
+label_settings = ExtResource("8_ym860")
+
+[node name="Button" type="Button" parent="TrashWarning/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_font_sizes/font_size = 10
+text = "yes"
+
+[node name="Button2" type="Button" parent="TrashWarning/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 1
+theme_override_font_sizes/font_size = 10
+text = "no"
+
+[node name="ShiftWorkspace" type="Area2D" parent="."]
+
+[node name="CollisionShapeLeft" type="CollisionShape2D" parent="ShiftWorkspace"]
+position = Vector2(7.625, 90)
+shape = SubResource("RectangleShape2D_e4xu1")
+
+[node name="CollisionShapeRight" type="CollisionShape2D" parent="ShiftWorkspace"]
+position = Vector2(310.5, 85)
+shape = SubResource("RectangleShape2D_xr2dw")
+
+[node name="Left" type="Area2D" parent="ShiftWorkspace"]
+visible = false
+position = Vector2(10, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShiftWorkspace/Left"]
+texture = ExtResource("9_7t6dd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShiftWorkspace/Left"]
+shape = SubResource("RectangleShape2D_3iowj")
+
+[node name="Right" type="Area2D" parent="ShiftWorkspace"]
+visible = false
+position = Vector2(310, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShiftWorkspace/Right"]
+texture = ExtResource("10_4vljp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShiftWorkspace/Right"]
+shape = SubResource("RectangleShape2D_3iowj")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="AppleStand" to="AppleStand" method="_on_apple_stand_child_exiting_tree"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="TrashWarning/GridContainer/Button" to="." method="_on_trash_confirm_pressed"]
+[connection signal="pressed" from="TrashWarning/GridContainer/Button2" to="." method="_on_trash_cancel_pressed"]
+[connection signal="mouse_shape_entered" from="ShiftWorkspace" to="." method="_on_shift_workspace_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="ShiftWorkspace" to="." method="_on_shift_workspace_mouse_shape_exited"]
+[connection signal="input_event" from="ShiftWorkspace/Left" to="." method="_on_left_input_event"]
+[connection signal="input_event" from="ShiftWorkspace/Right" to="." method="_on_right_input_event"]
+[connection signal="mouse_entered" from="ShiftWorkspace/Right" to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="ShiftWorkspace/Right" to="." method="_mouse_exited"]

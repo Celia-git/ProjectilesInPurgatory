@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ci27cb8goeo6q"]
+
+[ext_resource type="Texture2D" uid="uid://bge2opiwe8qok" path="res://Assets/Knockem.png" id="1_fyspx"]
+
+[resource]
+atlas = ExtResource("1_fyspx")
+region = Rect2(0, 128, 32, 32)

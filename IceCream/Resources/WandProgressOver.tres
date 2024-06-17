@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://esdyl7bvj1xe"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jlyer"]
+load_path = "res://.godot/imported/blender.png-6312f6901eba753b3811aa44dcc5f488.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_jlyer")
+region = Rect2(96, 192, 96, 96)

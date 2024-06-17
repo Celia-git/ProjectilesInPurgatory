@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://lol7ke5s8y65"]
+
+[ext_resource type="Script" path="res://IceCream/Vessels/Vessel.gd" id="1_cdycs"]
+[ext_resource type="SpriteFrames" uid="uid://eeotsviilc7" path="res://IceCream/Resources/ice_cream_frames.tres" id="2_w7oup"]
+[ext_resource type="Texture2D" uid="uid://udlwp2u4bwiq" path="res://Assets/vessels.png" id="2_y3brs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhqgc"]
+size = Vector2(24, 51)
+
+[node name="Vessel" type="Area2D" groups=["vessels"]]
+texture_filter = 1
+script = ExtResource("1_cdycs")
+
+[node name="IceCream" type="AnimatedSprite2D" parent="." groups=["ice_cream"]]
+visible = false
+sprite_frames = ExtResource("2_w7oup")
+animation = &"beginning"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_y3brs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_dhqgc")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

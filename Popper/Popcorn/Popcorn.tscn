@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://rlsk6giwxaxb"]
+
+[ext_resource type="Script" path="res://Popper/Popcorn/Popcorn.gd" id="1_iy8sj"]
+[ext_resource type="Texture2D" uid="uid://druf3375rasc1" path="res://Assets/Popper.png" id="2_3sc67"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oe5ks"]
+rough = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dtm2p"]
+radius = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5nxh"]
+atlas = ExtResource("2_3sc67")
+region = Rect2(304, 160, 16, 16)
+
+[node name="Popcorn" type="RigidBody2D"]
+show_behind_parent = true
+texture_filter = 1
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_oe5ks")
+contact_monitor = true
+script = ExtResource("1_iy8sj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_dtm2p")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_t5nxh")
+offset = Vector2(0, -8)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset = Vector2(0, -8)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,40 @@
+6/Ferris Wheel/48,32/Seat 1:32,96/Seat 2:0,64/Seat 3:0,16/Seat 4:48,0/Seat 5:80,32/Seat 6:80,80/base:0,0,128,128/true
++rides
+4/Brass Band/32,64/Trumpet:0,0/Tuba:32,0/Saxophone:64,0/Drum:96,0/base:128,0,128,80
++musicians
+4/Jugglers/48,64/Pin Juggler:0,0/Knife Juggler:48,0/Fruit Juggler:96,0/Ring Juggler:144,0/base:0,128,192,96
++clowns
+4/Animals/48,48/Pony:0,0,64,48/Goat:64,0/Pig:112,0/Chicken:160,0/base:128,80,208,48
++best_in_show
+4/Gourds/32,32/Pumpkin:0,0/Cucumber:32,0/Butternut Squash:0,32/Melon:32,32/base:0,384,64,64
++best_in_show
+4/Carousel/32,64/Horse 1:0,32/Horse 2:32,48,64,64/Horse 3:96,32,64,80/Horse 4:160,32,48,64/base:0,224,208,96/true
++rides
+3/Trapeze/80,80/Artist 1:0,0/Artist 2:80,0/Artist 3:160,0/base:256,0,240,80
++athletes
+3/Fruit/32,32/Apple:0,0/Pear:32,0/Persimmon,64:0/base:64,384,96,32
++best_in_show
+3/Contortionists/64,64/Contortionist 1:0,0/Contortionist 2:64,0/Contortionist 3:128,0/base:0,320,192,64
++athletes
+3/Strong Men/48,64/Strong Man 1:0,0/Strong Man 2:48,0,64,64/Strong Woman:112,64/base:192,128,160,96
++athletes
+3/Mimes/32,64/Mime 1:0,0/Mime 2:32,0/Mime 3:64:0/base:208,224,96,80
++clowns
+3/Pirate Show/32,64/Pirate 1:0,0/Pirate 2:32,0/Pirate 3:64,0/base:352,80,96,64
+3/Treats/32,32/Candied Apple:0,0/Pretzel:32,0/Corndog:64,0/base:64,384,96,32
+3/Bigtop Tents/48,64/Little Tent 1:0,0/Big Tent:48,0,64,64/Little Tent 2:112,0,48,64/base:304,224,160,64
+2/Pies/32,32/Rhubarb:0,0/Apple:32,0/base:64,416,64,32
++best_in_show
+2/Folk Duo/48,64/Accordion:0,0/Harmonica:48,0/base:208,304,96,80
++musicians
+2/Magic/32,64/Magician:0,0/Magician's Assistant:32,0/base:448,80,64,64
+2/Cannon/48,48/Human Cannonball:48,0,32,48/Cannon:0,0/base:304,228,80,48
++athletes
+2/Vaudeville Comedians/32,64/Tall Man:0,0/Short Man:32,0/base:352,144,64,80
+2/Ventriloquist/32,64/Ventriloquist:0,0/Puppet:32,16,32,48/base:316,144,64,80
+1/Medicine Man/32,64/Medicine Man:0,0/base:480,144,32,80
+1/Calliope/80,64/Calliope:0,0/base:384,288,80,64
++musicians
+1/Sad Clown/48,64/Sad Clown:0,0/base:464,224,48,64
++clowns
+

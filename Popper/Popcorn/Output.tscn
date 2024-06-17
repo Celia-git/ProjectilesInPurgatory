@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://cavhujwmtj5s5"]
+
+[ext_resource type="Script" path="res://Popper/Popcorn/Output.gd" id="1_41jaf"]
+[ext_resource type="Texture2D" path="res://Popper/Resources/Output.tres" id="1_qw6ry"]
+[ext_resource type="Texture2D" uid="uid://c7p8hksqygg5w" path="res://Popper/Resources/Bag.tres" id="3_thnyq"]
+[ext_resource type="Texture2D" uid="uid://drmderpshvh2q" path="res://UI/OrdersTrash.tres" id="4_42h11"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uequs"]
+size = Vector2(38, 4.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4cn1"]
+size = Vector2(6, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3r4n"]
+size = Vector2(12, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnkp2"]
+size = Vector2(11, 11)
+
+[node name="Output" type="StaticBody2D"]
+z_index = 1
+texture_filter = 1
+position = Vector2(-40, 50)
+collision_layer = 3
+script = ExtResource("1_41jaf")
+metadata/width = 38
+metadata/Length = 42
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19, 2.625)
+shape = SubResource("RectangleShape2D_uequs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(3, 26)
+shape = SubResource("RectangleShape2D_i4cn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -1)
+texture = ExtResource("1_qw6ry")
+centered = false
+offset = Vector2(-10, 0)
+
+[node name="NewBag" type="Area2D" parent="."]
+position = Vector2(7, -10)
+
+[node name="Sprite2D" type="Sprite2D" parent="NewBag"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_thnyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NewBag"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_y3r4n")
+
+[node name="TrashBag" type="Area2D" parent="."]
+position = Vector2(30, -10)
+
+[node name="Sprite2D" type="Sprite2D" parent="TrashBag"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_42h11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashBag"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_xnkp2")
+
+[connection signal="input_event" from="NewBag" to="." method="_on_new_bag_input_event"]
+[connection signal="mouse_entered" from="NewBag" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="NewBag" to="." method="_on_mouse_exited"]
+[connection signal="input_event" from="TrashBag" to="." method="_on_trash_bag_input_event"]
+[connection signal="mouse_entered" from="TrashBag" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TrashBag" to="." method="_on_mouse_exited"]

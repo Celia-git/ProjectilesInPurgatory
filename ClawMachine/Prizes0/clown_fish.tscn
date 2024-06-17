@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://65qun1w2qv3k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mkhwx"]
+load_path = "res://.godot/imported/prizes_0.png-bf2d0f9630ea30dcc956508f84d9fdce.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7c7b"]
+atlas = SubResource("CompressedTexture2D_mkhwx")
+region = Rect2(96, 64, 48, 48)
+
+[node name="plushie" type="RigidBody2D"]
+mass = 0.01
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-26, 1, -17, -14, -3, -17, 9, -10, 11, -7, 21, -15, 19, 0, 22, 18, 11, 6, 0, 16, -14, 14)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_f7c7b")

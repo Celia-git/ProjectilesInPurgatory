@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b4jgvqyfcv7s5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lojuk"]
+load_path = "res://.godot/imported/PumpStepTile.png-ea21866dd05a10e1b7cc9d43ea7715ba.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_lojuk")
+region = Rect2(0, 0, 112, 64)

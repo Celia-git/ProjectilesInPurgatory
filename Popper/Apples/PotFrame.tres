@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://slapn5i2mmin"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ics4h"]
+load_path = "res://.godot/imported/Popper.png-a79b557652848f5aea18bacc0a8763d2.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_ics4h")
+region = Rect2(384, 112, 128, 112)

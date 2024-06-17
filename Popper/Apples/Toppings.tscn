@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjqelj2ijnd7e"]
+
+[ext_resource type="Script" path="res://Popper/Apples/Toppings.gd" id="1_35nq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfjwl"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm4re"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i7fn"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eiob2"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bk1yd"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxaer"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ne27"]
+size = Vector2(48, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqrkb"]
+size = Vector2(48, 64)
+
+[node name="Toppings" type="Node2D"]
+position = Vector2(0, 15)
+script = ExtResource("1_35nq1")
+
+[node name="Topping1" type="Area2D" parent="."]
+position = Vector2(15, 12)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping1"]
+position = Vector2(32, 48)
+shape = SubResource("RectangleShape2D_tfjwl")
+
+[node name="Topping2" type="Area2D" parent="."]
+position = Vector2(15, 12)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping2"]
+position = Vector2(100, 48)
+shape = SubResource("RectangleShape2D_bm4re")
+
+[node name="Topping3" type="Area2D" parent="."]
+position = Vector2(15, 12)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping3"]
+position = Vector2(180, 48)
+shape = SubResource("RectangleShape2D_1i7fn")
+
+[node name="Topping4" type="Area2D" parent="."]
+position = Vector2(15, 12)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping4"]
+position = Vector2(260, 48)
+shape = SubResource("RectangleShape2D_eiob2")
+
+[node name="Topping5" type="Area2D" parent="."]
+position = Vector2(15, 12)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping5"]
+position = Vector2(32, 118)
+shape = SubResource("RectangleShape2D_bk1yd")
+
+[node name="Topping6" type="Area2D" parent="."]
+position = Vector2(15, 12)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping6"]
+position = Vector2(100, 119)
+shape = SubResource("RectangleShape2D_pxaer")
+
+[node name="Topping7" type="Area2D" parent="."]
+position = Vector2(15, 12)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping7"]
+position = Vector2(180, 120)
+shape = SubResource("RectangleShape2D_5ne27")
+
+[node name="Topping8" type="Area2D" parent="."]
+position = Vector2(15, 12)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topping8"]
+position = Vector2(260, 120)
+shape = SubResource("RectangleShape2D_uqrkb")

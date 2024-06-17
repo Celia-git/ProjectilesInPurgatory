@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://crd03fsm2uovm"]
+
+[ext_resource type="Script" path="res://IceCream/Vessels/BlizzieCup.gd" id="1_lnn8d"]
+[ext_resource type="SpriteFrames" uid="uid://eeotsviilc7" path="res://IceCream/Resources/ice_cream_frames.tres" id="2_vx7ql"]
+[ext_resource type="Texture2D" uid="uid://udlwp2u4bwiq" path="res://Assets/vessels.png" id="2_w4mc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pp5d"]
+size = Vector2(32, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnmjs"]
+size = Vector2(33, 5.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffr37"]
+atlas = ExtResource("2_w4mc1")
+region = Rect2(0, 0, 128, 96)
+
+[node name="BlizzieCup" type="Area2D"]
+script = ExtResource("1_lnn8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_3pp5d")
+
+[node name="Entry" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entry"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_jnmjs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1.0
+offset_bottom = 1.0
+color = Color(1, 0, 1, 1)
+
+[node name="IceCream" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = ExtResource("2_vx7ql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_ffr37")

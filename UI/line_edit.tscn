@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbl2ftxe27uvv"]
+
+[ext_resource type="FontFile" uid="uid://bhfehf41n51ck" path="res://Fonts/Somelove.otf" id="2_2o0aj"]
+
+[sub_resource type="FontVariation" id="FontVariation_226eb"]
+base_font = ExtResource("2_2o0aj")
+
+[node name="line_edit" type="LineEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0235294, 0.384314, 1)
+theme_override_fonts/font = SubResource("FontVariation_226eb")
+theme_override_font_sizes/font_size = 48
+caret_blink = true
+caret_blink_interval = 0.5

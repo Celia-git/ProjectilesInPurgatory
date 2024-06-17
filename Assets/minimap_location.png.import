@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://d4agj8rgwj7wo"
+path="res://.godot/imported/minimap_location.png-d93d4db2bb5200f0692aefd020b917c0.image"
+
+[deps]
+
+source_file="res://Assets/minimap_location.png"
+dest_files=["res://.godot/imported/minimap_location.png-d93d4db2bb5200f0692aefd020b917c0.image"]
+
+[params]
+

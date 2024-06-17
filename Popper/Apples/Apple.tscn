@@ -1,0 +1,165 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbhpr5ffpcowf"]
+
+[ext_resource type="Script" path="res://Popper/Apples/Apple.gd" id="1_uiuk3"]
+[ext_resource type="SpriteFrames" uid="uid://ch13tgqrjulx0" path="res://Popper/Resources/CaramelAppleAnimation.tres" id="2_1s8go"]
+[ext_resource type="Texture2D" uid="uid://cumh4hi20yrwc" path="res://Assets/AppleTopping.png" id="4_hsqaf"]
+
+[sub_resource type="Animation" id="Animation_gp0y0"]
+resource_name = "roll"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coating:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(0, 22), Vector2(0, 20), Vector2(0, 17), Vector2(0, 5), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coating:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.143, 2.2), Vector2(1, 2.5), Vector2(1.143, 2.2), Vector2(1.2, 2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Apple/Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dbpvs"]
+load_path = "res://.godot/imported/Popper.png-a79b557652848f5aea18bacc0a8763d2.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmyw8"]
+atlas = SubResource("CompressedTexture2D_dbpvs")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="Animation" id="Animation_1uxan"]
+resource_name = "rotate"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coating:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 15), Vector2(0, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Apple/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [&"DefaultCoated", &"Rolling"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Apple/Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 15)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Apple/StickSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [null, SubResource("AtlasTexture_pmyw8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eqx0o"]
+_data = {
+"roll": SubResource("Animation_gp0y0"),
+"rotate": SubResource("Animation_1uxan")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcl8r"]
+radius = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpema"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flxb0"]
+atlas = ExtResource("4_hsqaf")
+region = Rect2(0, 0, 40, 40)
+
+[node name="Apple" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 3
+input_pickable = true
+script = ExtResource("1_uiuk3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eqx0o")
+}
+
+[node name="Apple" type="Area2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Apple"]
+sprite_frames = ExtResource("2_1s8go")
+animation = &"DefaultCoated"
+
+[node name="StickSprite" type="Sprite2D" parent="Apple"]
+offset = Vector2(25, 14)
+
+[node name="Collision" type="CollisionShape2D" parent="Apple"]
+position = Vector2(0, 15)
+shape = SubResource("CircleShape2D_bcl8r")
+
+[node name="Coating" type="CollisionShape2D" parent="."]
+position = Vector2(5, 15)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kpema")
+disabled = true
+
+[node name="Toppings" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_top = -4.0
+offset_right = 19.0
+offset_bottom = 36.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_flxb0")
+
+[connection signal="input_event" from="." to="." method="_on_apple_input_event"]
+[connection signal="input_event" from="Apple" to="." method="_on_apple_input_event"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5xwj8vkff74k"]
+
+[ext_resource type="Script" path="res://Games/RingToss/RingToss.gd" id="1_76dp6"]
+[ext_resource type="PackedScene" uid="uid://c24g0w2phgcpt" path="res://Games/RingToss/BottleStand.tscn" id="2_iyp2a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3k1p"]
+size = Vector2(321, 7.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo8co"]
+size = Vector2(10, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duhit"]
+size = Vector2(10, 191)
+
+[node name="RingToss" type="Node2D"]
+script = ExtResource("1_76dp6")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(160, 160)
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(1.5, 17.875)
+shape = SubResource("RectangleShape2D_k3k1p")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-5, 85)
+shape = SubResource("RectangleShape2D_vo8co")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(324, 86.5)
+shape = SubResource("RectangleShape2D_duhit")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+input_pickable = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ceiling"]
+polygon = PackedVector2Array(-7, -9, 54, -79, 139, -130, 246, -130, 308, -84, 329, -8, 318, -8, 295, -80, 242, -123, 141, -122, 59, -71, 8, -9)
+
+[node name="BottleStand" parent="." instance=ExtResource("2_iyp2a")]
+position = Vector2(92, 170)
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

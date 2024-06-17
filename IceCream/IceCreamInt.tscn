@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkdovhab8nt0i"]
+
+[ext_resource type="PackedScene" uid="uid://cmbbvtyxdyvd8" path="res://Maps/PixelWorld.tscn" id="1_5s0ij"]
+[ext_resource type="Script" path="res://IceCream/IceCreamInt.gd" id="1_45fip"]
+[ext_resource type="Texture2D" uid="uid://byr327b747kr5" path="res://Assets/Backgrounds/IceCreamGameInt.png" id="3_3ix68"]
+[ext_resource type="Texture2D" uid="uid://b7wlo8gvwc1lp" path="res://Assets/Backgrounds/IceCreamTrailerInt.png" id="4_pk5v6"]
+
+[node name="IceCreamInt" type="ParallaxBackground"]
+script = ExtResource("1_45fip")
+
+[node name="Background" type="ParallaxLayer" parent="."]
+position = Vector2(0, -1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+
+[node name="PixelWorld" parent="." instance=ExtResource("1_5s0ij")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 218.0
+offset_right = -960.0
+offset_bottom = -502.0
+
+[node name="Frame" type="CanvasLayer" parent="."]
+
+[node name="OpenFrame" type="Sprite2D" parent="Frame"]
+texture = ExtResource("3_3ix68")
+centered = false
+
+[node name="CloseFrame" type="Sprite2D" parent="Frame"]
+texture = ExtResource("4_pk5v6")
+centered = false
+
+[node name="OpenShop" type="Button" parent="Frame"]
+anchors_preset = -1
+anchor_left = 0.058
+anchor_top = 0.301
+anchor_right = 0.323
+anchor_bottom = 0.625
+offset_top = -3.05176e-05
+offset_right = -92.8
+offset_bottom = 0.0999985
+text = "Open Shop?"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_right = 0.599854
+offset_bottom = 2.0
+mouse_filter = 1
+
+[node name="LeftButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 302.0
+offset_right = 215.0
+offset_bottom = 675.0
+mouse_filter = 1
+
+[node name="RightButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1393.0
+offset_top = 304.0
+offset_right = 1519.0
+offset_bottom = 677.0
+mouse_filter = 1
+
+[node name="CarryOver" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Nodes" type="Node2D" parent="CarryOver"]
+top_level = true
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+
+[node name="Popup" type="PopupPanel" parent="."]
+size = Vector2i(284, 176)
+
+[node name="Container" type="VBoxContainer" parent="Popup"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 272.0
+offset_bottom = 164.0
+
+[node name="Label" type="Label" parent="Popup/Container"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/Container"]
+layout_mode = 2
+
+[node name="Confirm" type="Button" parent="Popup/Container/HBoxContainer"]
+layout_mode = 2
+text = "yes"
+
+[node name="Reject" type="Button" parent="Popup/Container/HBoxContainer"]
+layout_mode = 2
+text = "no"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="pressed" from="Frame/OpenShop" to="." method="_on_open_shop_pressed"]
+[connection signal="mouse_entered" from="Control/LeftButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/LeftButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="mouse_entered" from="Control/RightButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/RightButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="draw" from="CarryOver/Nodes" to="." method="_on_nodes_draw"]
+[connection signal="pressed" from="Popup/Container/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Popup/Container/HBoxContainer/Reject" to="." method="_on_reject_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://nvbqvokf3etw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwxtw"]
+
+[node name="Toy" type="RigidBody2D"]
+mass = 0.05
+metadata/icon_region = Rect2(0, 56, 28, 28)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -8, -5, -6, -7, 7, 7, 7, 5, -6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_dwxtw")

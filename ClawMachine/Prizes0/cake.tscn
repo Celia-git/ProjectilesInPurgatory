@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b56pg24a0v5xp"]
+
+[ext_resource type="Texture2D" uid="uid://ctxp5jhklxx2n" path="res://ClawMachine/resources/cake.tres" id="1_pixag"]
+
+[node name="plushie" type="RigidBody2D"]
+mass = 0.01
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(6, -14, -3, -14, -3, -8, -7, -8, -7, -3, -12, -3, -12, 13, 15, 13, 15, -3, 10, -3, 10, -8, 6, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pixag")

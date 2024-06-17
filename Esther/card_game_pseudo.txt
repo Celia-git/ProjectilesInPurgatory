@@ -1,0 +1,35 @@
+
+signal straight_combo
+
+// Combo Tracker
+var element=""
+var stage=""
+var role=""
+var element_count = 0
+var stage_count = 0
+var role_count = 0
+
+
+func track(element, stage, role):
+	for each parameter:
+		if it matches self param:
+			self.param = new_param
+			increment parameter + _count
+		else:
+			self.param = ""
+			parameter + _count = 0
+	check_for_combo()
+	
+func check_for_combo():
+	check if variables satisfy conditions for a straight_combo
+	emit_signal("straight_combo", param)
+
+Tracking in-game combos:
+	on new_game, initialize a new combo tracker, connect signal straight_combo to _new_straight_combo
+	each _combo_cards, track(element, stage, role)
+
+
+when instantiating a draw token, connect to:
+	mouse_entered
+	mouse_exited
+	input_event

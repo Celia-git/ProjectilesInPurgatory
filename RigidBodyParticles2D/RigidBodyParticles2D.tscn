@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8dsnsgqve2sa"]
+
+[ext_resource type="Script" path="res://RigidBodyParticles2D/RigidBodyParticles2D.gd" id="1_hfxf7"]
+
+[node name="RigidBodyParticles2D" type="Node2D"]
+script = ExtResource("1_hfxf7")
+
+[node name="ShotTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="EmitTimer" type="Timer" parent="."]
+wait_time = 5.0

@@ -1,0 +1,43 @@
+Name/Palette/Ice Cream/Soda/Syrup/Topping/IconRow/IconColumn/Apple Topping/Popcorn Sauce
+Cake Cone/True/False/False/False/False/0/0/False/False/
+Waffle Cone Plain/True/False/False/False/False/0/1/False/False/
+Waffle Cone Pink/True/False/False/False/False/0/2/False/False/
+Waffle Cone Nuts/True/False/False/False/False/0/3/False/False/
+Waffle Cone Oreos/True/False/False/False/False/0/4/False/False/
+Waffle Cone Rainbow/True/False/False/False/False/0/5/False/False/
+Float/True/False/False/False/False/1/0/False/False/
+Shake/True/False/False/False/False/1/1/False/False/
+Soda/True/False/False/False/False/1/2/False/False/
+Blizzie/True/False/False/False/False/1/3/False/False/
+Chocolate/False/True/False/True/False/2/0/False/True/
+Vanilla/False/True/False/False/False/2/1/False/False/
+Strawberry/False/True/False/True/False/2/2/False/False/
+Cherry/False/False/True/True/False/2/5/False/False/
+Lemon-Lime/False/False/True/False/False/3/0/False/False/
+Root Beer/False/False/True/False/False/3/1/False/False/
+Cola/False/False/True/False/False/3/2/False/False/
+Peanut Butter/False/False/False/True/False/4/2/False/True/
+Caramel/False/False/False/True/False/4/3/False/True/
+Marshmallow/False/False/False/True/True/4/0/False/False/
+Milk/False/False/False/False/False/2/3/False/False/
+Whipped Cream/False/False/False/False/False/2/4/False/False/
+Oreo/False/False/False/False/True/5/0/True/False/
+Graham Cracker/False/False/False/False/True/4/5/False/False/
+Chocolate Candy/False/False/False/False/True/4/4/True/False/
+Gummy Bear/False/False/False/False/True/5/1/False/False/
+Rainbow Sprinkle/False/False/False/False/True/5/2/True/False/
+Pearl/False/False/False/False/True/5/3/False/False/
+Peanuts/False/False/False/False/True/4/2/True/False/
+Peanut Butter Cups/False/False/False/False/True/4/1/False/True/
+Pinapple/False/False/False/True/False/5/5/False/False/
+Shredded Coconut/False/False/False/False/True/5/4/False/False/
+Raspberry/False/False/False/True/False/3/4/False/False/
+Chili Crisp/False/False/False/False/True/6/0/True/True/
+Maple/False/False/False/True/False/3/5/False/False/
+Walnuts/False/False/False/False/True/6/1/True/False/
+Malted Milk Balls/False/False/False/False/True/6/2/False/False/
+Pecans/False/False/False/False/True/6/3/True/False/
+Pistachios/False/False/False/False/True/6/4/True/False/
+Banana/False/False/False/True/False/6/5/False/False/
+Butter/False/False/False/False/False/7/1/False/True/
+Cheese/False/False/False/False/False/7/0/False/True/

@@ -1,0 +1,122 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://Popper/Orders/OrderTracker.gd" id="1_tbpms"]
+[ext_resource type="Texture2D" uid="uid://dudt48v7a8mvm" path="res://UI/LargeButtonNormal.tres" id="2_dq8ft"]
+[ext_resource type="LabelSettings" uid="uid://ceb1v5htrexm3" path="res://UI/OrderLabel.tres" id="2_q8505"]
+[ext_resource type="Texture2D" uid="uid://kdhv38uvu6wj" path="res://UI/OrdersView.tres" id="2_tnchd"]
+[ext_resource type="Texture2D" uid="uid://c1lcq33e0rs8b" path="res://UI/LargeButtonPressed.tres" id="3_3lgru"]
+[ext_resource type="Texture2D" uid="uid://csi7mku0u2o5l" path="res://Assets/Backgrounds/Notepad (1).jpg" id="3_tx5wn"]
+[ext_resource type="Texture2D" uid="uid://06y8xenkmyrl" path="res://UI/LargeButtonHover.tres" id="4_mkn5e"]
+[ext_resource type="Texture2D" uid="uid://deqmxr8uje05n" path="res://UI/OrdersExpandLarge.tres" id="4_ueaxs"]
+[ext_resource type="Texture2D" uid="uid://dmjrqpil8ue2i" path="res://UI/OrdersCollapseLarge.tres" id="5_5aswo"]
+[ext_resource type="Theme" uid="uid://ftmpj1su44e3" path="res://UI/order_theme.tres" id="6_vhhas"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kda3w"]
+content_margin_left = 32.0
+content_margin_top = 96.0
+content_margin_right = 32.0
+content_margin_bottom = 64.0
+
+[node name="OrderTracker" type="PanelContainer"]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.107
+anchor_right = 0.684
+anchor_bottom = 0.936
+offset_left = -32.0
+offset_top = -32.3
+offset_right = -975.4
+offset_bottom = -721.4
+scale = Vector2(2, 2)
+size_flags_horizontal = 0
+mouse_filter = 1
+script = ExtResource("1_tbpms")
+
+[node name="ViewOrders" type="TextureButton" parent="."]
+layout_mode = 2
+tooltip_text = "view orders"
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("2_dq8ft")
+texture_pressed = ExtResource("3_3lgru")
+texture_hover = ExtResource("4_mkn5e")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="ViewOrders"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24
+anchor_top = 0.042
+anchor_right = 0.74
+anchor_bottom = 0.625
+offset_left = 2.8
+offset_top = 1.606
+offset_right = 23.3
+offset_bottom = 24.375
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_tnchd")
+
+[node name="OrderDockerPopup" type="Window" parent="."]
+title = "View Orders"
+position = Vector2i(200, 96)
+size = Vector2i(400, 400)
+visible = false
+transient = true
+min_size = Vector2i(400, 400)
+max_size = Vector2i(600, 850)
+content_scale_size = Vector2i(400, 400)
+content_scale_aspect = 1
+theme = ExtResource("6_vhhas")
+theme_override_font_sizes/title_font_size = 40
+
+[node name="TextureRect" type="TextureRect" parent="OrderDockerPopup"]
+clip_contents = true
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 1046.67
+offset_bottom = 788.0
+texture = ExtResource("3_tx5wn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OrderDockerPopup"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 488.0
+offset_bottom = 788.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kda3w")
+follow_focus = true
+horizontal_scroll_mode = 3
+
+[node name="OrderDocker" type="VBoxContainer" parent="OrderDockerPopup/ScrollContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 800)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="OrderView" type="HBoxContainer" parent="OrderDockerPopup/ScrollContainer/OrderDocker"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OrderDockerPopup/ScrollContainer/OrderDocker/OrderView"]
+layout_mode = 2
+text = "Collapse/Expand"
+label_settings = ExtResource("2_q8505")
+horizontal_alignment = 3
+
+[node name="Button" type="TextureButton" parent="OrderDockerPopup/ScrollContainer/OrderDocker/OrderView"]
+layout_mode = 2
+tooltip_text = "expand all"
+toggle_mode = true
+texture_normal = ExtResource("5_5aswo")
+texture_pressed = ExtResource("4_ueaxs")
+
+[connection signal="get_apple_order" from="." to="." method="_get_apple_order"]
+[connection signal="get_popcorn_order" from="." to="." method="_get_popcorn_order"]
+[connection signal="mouse_entered" from="ViewOrders" to="." method="_on_view_orders_mouse_entered"]
+[connection signal="mouse_exited" from="ViewOrders" to="." method="_on_view_orders_mouse_exited"]
+[connection signal="toggled" from="ViewOrders" to="." method="_on_view_orders_toggled"]
+[connection signal="close_requested" from="OrderDockerPopup" to="." method="_on_order_docker_popup_close_requested"]
+[connection signal="child_entered_tree" from="OrderDockerPopup/ScrollContainer/OrderDocker" to="." method="_on_order_docker_child_entered_tree"]
+[connection signal="toggled" from="OrderDockerPopup/ScrollContainer/OrderDocker/OrderView/Button" to="." method="_on_button_pressed"]

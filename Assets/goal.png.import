@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://cwqt55fxyfuoh"
+path="res://.godot/imported/goal.png-e405d3ca8b50495d2b0a4e851701fd6a.image"
+
+[deps]
+
+source_file="res://Assets/goal.png"
+dest_files=["res://.godot/imported/goal.png-e405d3ca8b50495d2b0a4e851701fd6a.image"]
+
+[params]
+

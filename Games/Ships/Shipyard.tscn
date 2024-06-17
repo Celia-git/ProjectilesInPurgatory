@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf0a0udqe41f5"]
+
+[ext_resource type="Script" path="res://Games/Ships/Shipyard.gd" id="1_xyfyh"]
+[ext_resource type="Script" path="res://Games/Ships/Shelf.gd" id="2_q8upu"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8xf1d"]
+b = Vector2(320, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_758ch"]
+b = Vector2(320, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8r2u1"]
+b = Vector2(320, 0)
+
+[node name="Shipyard" type="Node2D"]
+script = ExtResource("1_xyfyh")
+
+[node name="Shelves" type="Node2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="Shelf0" type="StaticBody2D" parent="Shelves"]
+position = Vector2(0, 28)
+input_pickable = true
+script = ExtResource("2_q8upu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelves/Shelf0"]
+shape = SubResource("SegmentShape2D_8xf1d")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Timer" type="Timer" parent="Shelves/Shelf0"]
+autostart = true
+
+[node name="Shelf1" type="StaticBody2D" parent="Shelves"]
+position = Vector2(0, 70)
+input_pickable = true
+script = ExtResource("2_q8upu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelves/Shelf1"]
+shape = SubResource("SegmentShape2D_758ch")
+
+[node name="Timer" type="Timer" parent="Shelves/Shelf1"]
+autostart = true
+
+[node name="Shelf2" type="StaticBody2D" parent="Shelves"]
+position = Vector2(0, 110)
+input_pickable = true
+script = ExtResource("2_q8upu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shelves/Shelf2"]
+shape = SubResource("SegmentShape2D_8r2u1")
+
+[node name="Timer" type="Timer" parent="Shelves/Shelf2"]
+autostart = true
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="child_entered_tree" from="Shelves/Shelf0" to="Shelves/Shelf0" method="_on_shelf_child_entered_tree"]
+[connection signal="hit_target" from="Shelves/Shelf0" to="." method="_hit_target"]
+[connection signal="timeout" from="Shelves/Shelf0/Timer" to="Shelves/Shelf0" method="_reset_time"]
+[connection signal="child_entered_tree" from="Shelves/Shelf1" to="Shelves/Shelf1" method="_on_shelf_child_entered_tree"]
+[connection signal="hit_target" from="Shelves/Shelf1" to="." method="_hit_target"]
+[connection signal="timeout" from="Shelves/Shelf1/Timer" to="Shelves/Shelf1" method="_reset_time"]
+[connection signal="child_entered_tree" from="Shelves/Shelf2" to="Shelves/Shelf2" method="_on_shelf_child_entered_tree"]
+[connection signal="hit_target" from="Shelves/Shelf2" to="." method="_hit_target"]
+[connection signal="timeout" from="Shelves/Shelf2/Timer" to="Shelves/Shelf2" method="_reset_time"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5wciuk2as64r"]
+
+[ext_resource type="Texture2D" uid="uid://qwbglfltx337" path="res://Assets/knapsack_plushies.png" id="1_720o0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svkkf"]
+atlas = ExtResource("1_720o0")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(144, 114)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_svkkf")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

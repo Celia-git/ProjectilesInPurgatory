@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://btle6gcgxfnyq"]
+
+[ext_resource type="Script" path="res://Popper/Popcorn/Scoop.gd" id="1_yejtn"]
+
+[node name="Scoop" type="CharacterBody2D"]
+z_index = 1
+z_as_relative = false
+collision_layer = 2
+collision_mask = 2
+slide_on_ceiling = false
+floor_stop_on_slope = false
+script = ExtResource("1_yejtn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+offset = Vector2(-24, 7)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-24, 19)
+polygon = PackedVector2Array(24, -19, 24, -13, 19, 5, 8, 15, -7, 19, -20, 12, -7, 16, 7, 13, 17, 4)

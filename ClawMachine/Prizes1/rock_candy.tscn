@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ifq8u6jbq0tw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_arbfb"]
+radius = 5.0
+height = 12.0
+
+[node name="Candy" type="RigidBody2D"]
+mass = 0.05
+metadata/weight = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_arbfb")
+metadata/weight = 0.25

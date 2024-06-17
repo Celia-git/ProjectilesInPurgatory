@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxkr0gr1umn8l"]
+
+[ext_resource type="Script" path="res://IceCream/IceCream/Dispenser.gd" id="1_wxkx1"]
+[ext_resource type="SpriteFrames" uid="uid://bsly0okkq7dbb" path="res://IceCream/Resources/Drip.tres" id="2_rbqx0"]
+[ext_resource type="Texture2D" uid="uid://mr5kuqrlvleo" path="res://IceCream/Resources/ice_cream_flow.tres" id="3_dvk6c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehafo"]
+size = Vector2(29, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1y48"]
+size = Vector2(108, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48s2t"]
+
+[node name="Dispenser" type="Node2D"]
+script = ExtResource("1_wxkx1")
+
+[node name="FillAreas" type="Area2D" parent="."]
+position = Vector2(0, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FillAreas"]
+position = Vector2(28, 40)
+shape = SubResource("RectangleShape2D_ehafo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FillAreas"]
+position = Vector2(83, 40)
+shape = SubResource("RectangleShape2D_ehafo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FillAreas"]
+position = Vector2(138, 40)
+shape = SubResource("RectangleShape2D_ehafo")
+
+[node name="Cones" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Cones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cones/Area2D"]
+position = Vector2(246, 63)
+shape = SubResource("RectangleShape2D_t1y48")
+
+[node name="DripSprites" type="Node2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 30)
+
+[node name="Drip2" type="AnimatedSprite2D" parent="DripSprites"]
+position = Vector2(28, 0)
+sprite_frames = ExtResource("2_rbqx0")
+
+[node name="Drip1" type="AnimatedSprite2D" parent="DripSprites"]
+position = Vector2(83, 0)
+sprite_frames = ExtResource("2_rbqx0")
+
+[node name="Drip0" type="AnimatedSprite2D" parent="DripSprites"]
+position = Vector2(138, 0)
+sprite_frames = ExtResource("2_rbqx0")
+
+[node name="Length1" type="Sprite2D" parent="DripSprites"]
+position = Vector2(83, 0)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("3_dvk6c")
+centered = false
+offset = Vector2(-8, 0)
+
+[node name="Length2" type="Sprite2D" parent="DripSprites"]
+position = Vector2(28, 0)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("3_dvk6c")
+centered = false
+offset = Vector2(-8, 0)
+
+[node name="Length0" type="Sprite2D" parent="DripSprites"]
+position = Vector2(138, 0)
+scale = Vector2(1, 1e-05)
+texture = ExtResource("3_dvk6c")
+centered = false
+offset = Vector2(-8, 0)
+
+[node name="PumpSprites" type="Node2D" parent="."]
+position = Vector2(0, 10)
+
+[node name="Pump2" type="Area2D" parent="PumpSprites"]
+position = Vector2(28, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PumpSprites/Pump2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PumpSprites/Pump2"]
+shape = SubResource("RectangleShape2D_48s2t")
+
+[node name="Pump1" type="Area2D" parent="PumpSprites"]
+position = Vector2(83, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PumpSprites/Pump1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PumpSprites/Pump1"]
+shape = SubResource("RectangleShape2D_48s2t")
+
+[node name="Pump0" type="Area2D" parent="PumpSprites"]
+position = Vector2(138, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PumpSprites/Pump0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PumpSprites/Pump0"]
+shape = SubResource("RectangleShape2D_48s2t")
+
+[connection signal="input_event" from="Cones/Area2D" to="." method="_on_cones_input"]
+[connection signal="input_event" from="PumpSprites/Pump2" to="." method="_on_pump_input_event" binds= [2]]
+[connection signal="input_event" from="PumpSprites/Pump1" to="." method="_on_pump_input_event" binds= [1]]
+[connection signal="input_event" from="PumpSprites/Pump0" to="." method="_on_pump_input_event" binds= [0]]

@@ -1,0 +1,23 @@
+[gd_resource type="AnimatedTexture" load_steps=7 format=3 uid="uid://bg74eb234wjhn"]
+
+[ext_resource type="Texture2D" uid="uid://nmm4h5cyinrb" path="res://Assets/ui_arrows_2_hover1.png" id="1_o06dy"]
+[ext_resource type="Texture2D" uid="uid://brbtvvm7q4qqb" path="res://Assets/ui_arrows_2_hover2.png" id="2_ut5bk"]
+[ext_resource type="Texture2D" uid="uid://d1vd0r51p5hpi" path="res://Assets/ui_arrows_2_hover3.png" id="3_32vmp"]
+[ext_resource type="Texture2D" uid="uid://b2evorcitphjp" path="res://Assets/ui_arrows_2_hover4.png" id="4_k5fbk"]
+[ext_resource type="Texture2D" uid="uid://eikfl46x4sh5" path="res://Assets/ui_arrows_2_hover5.png" id="5_2qnbb"]
+[ext_resource type="Texture2D" uid="uid://c457ppbji6do0" path="res://Assets/ui_arrows_2_hover6.png" id="6_mmtf4"]
+
+[resource]
+frames = 6
+speed_scale = 10.0
+frame_0/texture = ExtResource("1_o06dy")
+frame_1/texture = ExtResource("2_ut5bk")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_32vmp")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_k5fbk")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_2qnbb")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_mmtf4")
+frame_5/duration = 1.0

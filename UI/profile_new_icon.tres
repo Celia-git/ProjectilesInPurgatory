@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://pjv1emjj4tcu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d8dod"]
+load_path = "res://.godot/imported/profile_icons.png-548445282623c39394ac34b96b873273.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_d8dod")
+region = Rect2(75, 0, 75, 75)
