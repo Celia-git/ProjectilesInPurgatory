@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgghhbgaldna2"]
+
+[ext_resource type="Script" path="res://Games/RingToss/Ring.gd" id="1_8c0lc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_286uf"]
+rough = true
+bounce = 0.45
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv87i"]
+size = Vector2(22, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7vdf"]
+size = Vector2(16, 4)
+
+[node name="Ring" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_286uf")
+max_contacts_reported = 12
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_8c0lc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+offset = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lv87i")
+
+[node name="Hole" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+shape = SubResource("RectangleShape2D_b7vdf")
+
+[node name="Shine" type="AnimatedSprite2D" parent="."]
+speed_scale = 6.0
+offset = Vector2(0, -5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Hole" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Hole" to="." method="_on_area_exited"]

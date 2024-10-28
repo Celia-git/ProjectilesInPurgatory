@@ -1,0 +1,187 @@
+[gd_scene load_steps=10 format=3 uid="uid://chmbjveoxqb2i"]
+
+[ext_resource type="PackedScene" uid="uid://cmbbvtyxdyvd8" path="res://Maps/PixelWorld.tscn" id="1_ahtrq"]
+[ext_resource type="Script" path="res://Games/GamesInt.gd" id="1_o6acd"]
+[ext_resource type="Texture2D" uid="uid://bbamg63wmtb1q" path="res://Assets/GamesInt.png" id="3_hln3m"]
+[ext_resource type="Texture2D" uid="uid://dyiim205ahhmp" path="res://Assets/GamesIntShipyardLabel.png" id="4_io12p"]
+[ext_resource type="Texture2D" uid="uid://cihpughl3sgft" path="res://Assets/Progress2.png" id="5_qv3wb"]
+
+[sub_resource type="Gradient" id="Gradient_m8poc"]
+offsets = PackedFloat32Array(0, 0.585938, 1)
+colors = PackedColorArray(0, 0, 0.384314, 1, 0.195604, 0.441406, 0.476057, 1, 0.443137, 1, 0.592157, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6aifu"]
+gradient = SubResource("Gradient_m8poc")
+height = 600
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_j06ro"]
+offsets = PackedFloat32Array(0.0136364, 0.363636, 0.968182)
+colors = PackedColorArray(1, 0, 1, 1, 0.504762, 0.190262, 0.695031, 1, 0, 0.384184, 0.384198, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rela3"]
+gradient = SubResource("Gradient_j06ro")
+width = 980
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 1)
+
+[node name="GamesInt" type="ParallaxBackground"]
+script = ExtResource("1_o6acd")
+
+[node name="Background" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+centered = false
+offset = Vector2(320, 218)
+
+[node name="PixelWorld" parent="." instance=ExtResource("1_ahtrq")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 218.0
+offset_right = -960.0
+offset_bottom = -502.0
+
+[node name="Frame" type="ParallaxLayer" parent="."]
+
+[node name="Frame" type="Sprite2D" parent="Frame"]
+texture = ExtResource("3_hln3m")
+centered = false
+
+[node name="Label" type="Sprite2D" parent="Frame/Frame"]
+texture = ExtResource("4_io12p")
+centered = false
+offset = Vector2(420, 75)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -3.0
+offset_right = -11.4001
+offset_bottom = -1.0
+mouse_filter = 1
+
+[node name="LeftButton" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 305.0
+offset_right = 143.0
+offset_bottom = 678.0
+mouse_filter = 1
+
+[node name="RightButton" type="Button" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 299.0
+offset_right = 1574.0
+offset_bottom = 672.0
+mouse_filter = 1
+
+[node name="RadialBox" type="PanelContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.736
+anchor_top = 0.248
+anchor_right = 0.803
+anchor_bottom = 0.371
+offset_left = 0.135986
+offset_top = 0.303986
+offset_right = 0.00305176
+offset_bottom = 0.358002
+grow_horizontal = 2
+
+[node name="ProgressPie" type="TextureProgressBar" parent="Control/RadialBox"]
+layout_mode = 2
+fill_mode = 5
+texture_progress = ExtResource("5_qv3wb")
+radial_initial_angle = 270.0
+
+[node name="VerticalBox" type="PanelContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 200.0
+offset_right = 344.0
+offset_bottom = 800.0
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Control/VerticalBox"]
+layout_mode = 2
+fill_mode = 2
+texture_progress = SubResource("GradientTexture2D_6aifu")
+
+[node name="HorizontalBox" type="PanelContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(960, 64)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 820.0
+offset_right = -299.0
+offset_bottom = -18.0
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Control/HorizontalBox"]
+layout_mode = 2
+texture_progress = SubResource("GradientTexture2D_rela3")
+
+[node name="Score" type="PanelContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.213
+anchor_top = 0.248
+anchor_right = 0.258
+anchor_bottom = 0.33
+offset_left = -0.587006
+offset_top = 0.303986
+offset_right = -0.541992
+offset_bottom = -2.66
+
+[node name="Label" type="Label" parent="Control/Score"]
+layout_mode = 2
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="PopupPanel" type="PopupPanel" parent="Control"]
+size = Vector2i(157, 100)
+
+[node name="Label" type="Label" parent="Control/PopupPanel"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 332.0
+offset_bottom = 88.0
+text = "new text"
+
+[node name="Button" type="Button" parent="Control/PopupPanel"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 145.0
+offset_bottom = 88.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Yes"
+
+[node name="CarryOver" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Nodes" type="Node2D" parent="CarryOver"]
+top_level = true
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+
+[connection signal="mouse_entered" from="Control/LeftButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/LeftButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="mouse_entered" from="Control/RightButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/RightButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="Control/PopupPanel/Button" to="." method="_on_button_pressed"]
+[connection signal="child_entered_tree" from="CarryOver/Nodes" to="." method="_on_carryover_nodes_child_entered_tree"]

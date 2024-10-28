@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ehxtgrnds0qt"]
+
+[ext_resource type="Script" path="res://Games/Knockem/Targets.gd" id="1_86c4b"]
+
+[node name="Targets" type="Node2D"]
+script = ExtResource("1_86c4b")

@@ -1,0 +1,169 @@
+
+# Portals are custom drawn for each scene
+
+# Edit image sizes
+
+images: 
+	# All Arrows need normal, hover, and pressed
+	forward_arrow: (172, 150)
+	back_arrow: (196, 152)
+	back_left_arrow (364, 134)
+	forward_right_arrow (266, 153)
+	forward_left_arrow (278, 245)
+	right_arrow: (380, 80)
+	left_arrow: (550, 110)
+	# Full Res
+	signs for Boardwalk_3- ice cream window:
+		Help Wanted 	( before you play the game)
+		Closed- Back soon! (after you play the game)
+	# Pixel Res
+	signs for Ice Cream Int ( Interior shop scene)
+		Open/Closed- player flips sign to open shop
+		- (flip sign animation?)
+0
+Boardwalk_1: 
+	portals- 
+		portal0
+			to : Claw Machines
+			areas : [Rect2(0,190,228, 570), Rect2( 276, 328, 185, 372), Rect2(1065, 285, 173, 367), Rect2(1285, 305, 196, 493)]
+	arrows- 
+		arrow0
+			image : forward_arrow
+			to : Boardwalk_2
+			area : Rect2(720, 562, 172, 150)
+1			
+Boardwalk_2: 
+	portals-
+		portal0
+			to: Diviner
+			area : Rect2(40, 560, 180, 180)
+	arrows-
+		arrow0
+			image : back_arrow
+			to : Boardwalk_1
+			area : Rect2(477, 747, 196, 152)
+		arrow1
+			image : forward_right_arrow
+			to : Boardwalk_9
+			area : Rect2(750, 582, 266, 153)
+		arrow2
+			image: forward_left_arrow
+			to : Boardwalk_3
+			area : Rect2(375, 462, 278, 245)
+2
+Boardwalk_3:
+	arrows-
+		arrow0
+			image : back_left_arrow
+			to: Boardwalk_2
+			area : Rect2(435, 765, 364, 134)
+		arrow1
+			image : right_arrow
+			to : Boardwalk_4
+			area : Rect2(990, 795, 380, 80)
+3			
+Boardwalk_4: 
+	portals-
+		portal0
+			to: Ice Cream Trailer Int
+			area : Rect2(420, 0, 140, 568)
+	arrows-
+		arrow0
+			image : left_arrow
+			to : Boardwalk_3
+			area : Rect2(25, 765, 550, 110)
+			
+		arrow1
+			image : right_arrow
+			to : Boardwalk_5A
+			area : Rect2(1170, 775, 380, 80)
+4			
+Boardwalk_5A:
+	portals-
+		portal0	
+			to: Games
+			areas : [Rect2(0, 125, 335, 550), Rect2(425, 300, 108, 308), Rect2(1125, 125, 450 550)]
+	arrows-
+		arrow0
+			image : back_arrow
+			to : Boardwalk_5B
+			area : Rect2(739, 750, 196, 152)
+		arrow1
+			image : forward_arrow
+			to : Boardwalk_6
+			area : Rect2(675, 540, 172, 150)
+6
+Boardwalk_6:
+	portals-
+		portal0	
+			to : Constellations
+			area : Rect2(755, 175, 158, 315)
+	arrows-
+		arrow0
+			image : back_arrow
+			to : Boardwalk_5B
+			area : Rect2(735, 750, size)
+5
+Boardwalk_5B:
+	arrows-
+		arrow0
+			image : back_arrow
+			to : Boardwalk_5A
+			area : Rect2(560, 745, size)
+		arrow1
+			image : forward_left_arrow
+			to : Boardwalk_7
+			area : Rect2(125, 617, size)
+		arrow2
+			image : forward_right_arrow
+			to : Boardwalk_4
+			area : Rect2(975, 665, size)
+
+Boardwalk_7
+	portals-
+		portal0
+			to : Porta Potty Int
+			area : Rect2(180, 118,324,675)
+		portal1:
+			to : Ferris Wheel
+			area : Rect2(1090, 530, 390, 260)
+		
+
+	arrows-
+		arrow0
+			image : back_arrow
+			to : Boardwalk_5B
+			area : Rect2(780, 740, size)
+		arrow1
+			image : forward_arrow
+			to : Boardwalk_8
+			area : Rect2(830, 535, size)
+Boardwalk_8
+	portals-
+		portal0
+			to : Popper
+			area : Rect2(570, 0, 775, 386)
+	arrows-
+		arrow 0
+			image : left_arrow
+			to : Boardwalk_7
+			area : Rect2(35, 765, size)
+		arrow 1 
+			image : right_arrow
+			to : Boardwalk_9
+			area : Rect2(1007, 755, size)
+Boardwalk_9
+	portals:
+		portal0
+			to : ducksInt
+			area : Rect2(1071, 53 ,270, 500)
+	arrows:
+		arrow0:
+			image: back_left_arrow
+			to : Boardwalk_8
+			area : Rect2(155, 665, size)
+		arrow1:
+			image: right_arrow
+			to : Boardwalk_2
+			area : Rect2(955, 685, size)
+			

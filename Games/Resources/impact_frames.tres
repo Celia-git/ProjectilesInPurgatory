@@ -1,0 +1,86 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://bvxsw1d3m7g4l"]
+
+[ext_resource type="Texture2D" uid="uid://b2kyriubqirgm" path="res://Assets/Ships.png" id="1_40bro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qbk4"]
+atlas = ExtResource("1_40bro")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5plv"]
+atlas = ExtResource("1_40bro")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vb4g"]
+atlas = ExtResource("1_40bro")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m34pw"]
+atlas = ExtResource("1_40bro")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkhjw"]
+atlas = ExtResource("1_40bro")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4d7g"]
+atlas = ExtResource("1_40bro")
+region = Rect2(176, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dg5o"]
+atlas = ExtResource("1_40bro")
+region = Rect2(208, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raio0"]
+atlas = ExtResource("1_40bro")
+region = Rect2(192, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daj2j"]
+atlas = ExtResource("1_40bro")
+region = Rect2(240, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx4io"]
+atlas = ExtResource("1_40bro")
+region = Rect2(224, 16, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qbk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5plv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vb4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m34pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkhjw")
+}],
+"loop": false,
+"name": &"impact1",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4d7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dg5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raio0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daj2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx4io")
+}],
+"loop": false,
+"name": &"impact2",
+"speed": 16.0
+}]
