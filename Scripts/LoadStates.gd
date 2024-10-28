@@ -38,7 +38,6 @@ func load_player():
 	# If no current player file, return new one with default values
 	return new_player()
 	
-	
 func load_game_data():
 	game_data_saved = false
 	
@@ -46,7 +45,7 @@ func load_game_data():
 	if ResourceLoader.exists(file_path):
 		var load_data = ResourceLoader.load(file_path)
 		if load_data is GameData: # Check that the data is valid
-			if load_data.esther != null: 
+			if load_data.games != null: 
 				return load_data
 		
 	# if Data is corrupted or file is missing, load new game data

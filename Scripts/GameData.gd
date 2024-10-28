@@ -8,7 +8,7 @@ class_name GameData
 @export var claw_machine = {"plushies_taken":[], "capsules_taken":[], "toys_taken":[], "treasure_taken":false}
 @export var ducks = {"rounds_won":0, "record_time":0.0, "matches":[]}
 @export var esther = {"known_characters":[], "achievements":{}, "unlocked_achievements":[], "draw_tokens":[]}
-@export var games = {}
+@export var games = {"tickets":0}
 @export var ice_cream = {"orders_fulfilled":0, "orders_failed":0}
 @export var popper = {}
 				# "name" unlocked:bool, favor:int, quest:int
