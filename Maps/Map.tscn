@@ -1,72 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj388qr1t78ir"]
+[gd_scene load_steps=4 format=3 uid="uid://cj388qr1t78ir"]
 
 [ext_resource type="Script" path="res://Maps/Map.gd" id="1_rwc3s"]
 [ext_resource type="PackedScene" uid="uid://satpprb8t6sf" path="res://UI/DialogBox.tscn" id="2_2o1lw"]
-[ext_resource type="Script" path="res://Maps/Profile_background_layer0.gd" id="2_as0pa"]
-[ext_resource type="Texture2D" uid="uid://ch0pojc58r5o4" path="res://Assets/Backgrounds/Profile/Layer0/layer0_1.png" id="3_4p6x5"]
 [ext_resource type="Texture2D" uid="uid://b704i02y4ut6o" path="res://Assets/PixelWorldFrame.png" id="3_6sewc"]
-[ext_resource type="Script" path="res://Maps/Profile_background_layer1.gd" id="3_sb05t"]
-[ext_resource type="PackedScene" uid="uid://b3vgnrt4c0bh6" path="res://UI/Guestbook.tscn" id="4_dt6dh"]
-[ext_resource type="PackedScene" uid="uid://d1inwx375g7p2" path="res://UI/Profile.tscn" id="4_r1meg"]
-[ext_resource type="Texture2D" uid="uid://c80bac28jjhgb" path="res://Assets/minimap.png" id="9_dvcf1"]
-[ext_resource type="Texture2D" uid="uid://b0yh78r4uauv8" path="res://Assets/minimap_anchormask.png" id="10_nm3wb"]
-
-[sub_resource type="Gradient" id="Gradient_b7xk7"]
-colors = PackedColorArray(0, 0, 0, 0.215686, 0, 0, 0, 0.0784314)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_85a0i"]
-gradient = SubResource("Gradient_b7xk7")
-width = 1600
-height = 900
-fill_from = Vector2(0.907336, 0.178464)
-fill_to = Vector2(0.196911, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wl7fo"]
-texture = ExtResource("9_dvcf1")
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_rwc3s")
-
-[node name="Background" type="ParallaxBackground" parent="."]
-layer = 2
-scroll_limit_end = Vector2(1600, 900)
-
-[node name="Layer0" type="ParallaxLayer" parent="Background"]
-motion_mirroring = Vector2(200, 200)
-script = ExtResource("2_as0pa")
-
-[node name="Sprite2D" type="TextureRect" parent="Background/Layer0"]
-offset_right = 1600.0
-offset_bottom = 900.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("3_4p6x5")
-stretch_mode = 1
-
-[node name="Layer1" type="ParallaxLayer" parent="Background"]
-unique_name_in_owner = true
-motion_offset = Vector2(1600, 900)
-motion_mirroring = Vector2(1600, 900)
-script = ExtResource("3_sb05t")
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Layer1"]
-self_modulate = Color(1, 1, 1, 0.607843)
-centered = false
-
-[node name="LayerShade1" type="ParallaxLayer" parent="Background"]
-
-[node name="Gradient" type="Sprite2D" parent="Background/LayerShade1"]
-texture = SubResource("GradientTexture2D_85a0i")
-centered = false
-
-[node name="Layer2" type="ParallaxLayer" parent="Background"]
-unique_name_in_owner = true
-motion_mirroring = Vector2(1600, 900)
-script = ExtResource("3_sb05t")
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/Layer2"]
-self_modulate = Color(1, 1, 1, 0.784314)
-centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -87,74 +26,8 @@ texture = ExtResource("3_6sewc")
 centered = false
 offset = Vector2(-3, -3)
 
-[node name="Profile" parent="CanvasLayer" instance=ExtResource("4_r1meg")]
-visible = false
-
-[node name="Guestbook" parent="CanvasLayer" instance=ExtResource("4_dt6dh")]
-visible = false
-
-[node name="Minimap" type="Panel" parent="CanvasLayer"]
-visible = false
-texture_filter = 1
-custom_minimum_size = Vector2(429, 282)
-anchors_preset = -1
-anchor_left = 0.732
-anchor_top = 0.687
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.200073
-offset_top = -0.300049
-grow_horizontal = 0
-grow_vertical = 0
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_wl7fo")
-
-[node name="AnchorMask" type="TextureRect" parent="CanvasLayer/Minimap"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.999
-anchor_bottom = 1.054
-offset_right = 0.0303345
-offset_bottom = -10.9119
-texture = ExtResource("10_nm3wb")
-
-[node name="DotMask" type="TextureRect" parent="CanvasLayer/Minimap"]
-layout_mode = 2
-anchor_left = 0.056
-anchor_top = 0.085
-anchor_right = 0.943
-anchor_bottom = 0.919
-offset_left = -24.024
-offset_top = -23.97
-offset_right = -404.547
-offset_bottom = -259.158
-mouse_filter = 2
-
 [node name="Timer" type="Timer" parent="."]
 
-[connection signal="texture_changed" from="Background/Layer1/Sprite2D" to="Background/Layer1" method="_on_sprite_2d_texture_changed"]
-[connection signal="start_timer" from="Background/Layer2" to="." method="_background_sync_start_timer"]
-[connection signal="texture_changed" from="Background/Layer2/Sprite2D" to="Background/Layer2" method="_on_sprite_2d_texture_changed"]
 [connection signal="child_exiting_tree" from="CanvasLayer" to="." method="_on_child_exiting_tree"]
 [connection signal="text_finished" from="CanvasLayer/DialogBox" to="." method="_on_dialog_box_text_finished"]
-[connection signal="change_mouse_tail_variables" from="CanvasLayer/Profile" to="." method="_on_profile_change_mouse_tail_variables"]
-[connection signal="line_edit_mouse_entered" from="CanvasLayer/Profile" to="." method="_on_line_edit_mouse_entered"]
-[connection signal="line_edit_mouse_exited" from="CanvasLayer/Profile" to="." method="_on_button_mouse_exited"]
-[connection signal="load_game_file" from="CanvasLayer/Profile" to="." method="_reload_game_file"]
-[connection signal="mouse_out" from="CanvasLayer/Profile" to="." method="_on_button_mouse_exited"]
-[connection signal="mouse_over" from="CanvasLayer/Profile" to="." method="_on_button_mouse_entered"]
-[connection signal="rename_game_file" from="CanvasLayer/Profile" to="." method="_rename_game_file"]
-[connection signal="save_game" from="CanvasLayer/Profile" to="." method="_save_game"]
-[connection signal="toggle_mouse_tail" from="CanvasLayer/Profile" to="." method="_on_toggle_mouse_tail"]
-[connection signal="visibility_changed" from="CanvasLayer/Profile" to="." method="_on_profile_visibility_changed"]
-[connection signal="line_edit_mouse_entered" from="CanvasLayer/Guestbook" to="." method="_on_line_edit_mouse_entered"]
-[connection signal="line_edit_mouse_exited" from="CanvasLayer/Guestbook" to="." method="_on_button_mouse_exited"]
-[connection signal="load_game_file" from="CanvasLayer/Guestbook" to="." method="_load_game_file"]
-[connection signal="mouse_out" from="CanvasLayer/Guestbook" to="." method="_on_button_mouse_exited"]
-[connection signal="mouse_over" from="CanvasLayer/Guestbook" to="." method="_on_button_mouse_entered"]
-[connection signal="visibility_changed" from="CanvasLayer/Guestbook" to="." method="_on_profile_visibility_changed"]
-[connection signal="mouse_entered" from="CanvasLayer/Minimap" to="." method="_on_minimap_mouse_entered"]
-[connection signal="gui_input" from="CanvasLayer/Minimap/AnchorMask" to="." method="_on_anchor_mask_gui_input"]
-[connection signal="mouse_exited" from="CanvasLayer/Minimap/AnchorMask" to="." method="_on_anchor_mask_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

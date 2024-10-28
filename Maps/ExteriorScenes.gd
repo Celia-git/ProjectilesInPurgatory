@@ -29,18 +29,18 @@ func load_map(index):
 	clear_ui_nodes()
 	
 	map_data = Globals.boardwalk_script.new(index)
-	arrow_data = map_data.get_arrow_data() 
+#	arrow_data = map_data.get_arrow_data() 
 	portal_data = map_data.get_portal_data()
 	
-	# create arrows on boardwalk map
-	for dict in arrow_data:
-		# Create Texture buttons and attach arrow script, connect to arrow signals
-		var arrow_node = Globals.boardwalk_arrow_script.new(dict["direction"], dict["position"], dict["destination"])
-		arrow_node.add_to_group("ui_nodes")
-		$Control.add_child(arrow_node)
-		arrow_node.mouse_entered.connect(_on_button_mouse_entered)
-		arrow_node.mouse_exited.connect(_on_button_mouse_exited)
-		arrow_node.pressed.connect(_on_arrow_pressed.bind(dict["destination"]))
+#	# create arrows on boardwalk map
+#	for dict in arrow_data:
+#		# Create Texture buttons and attach arrow script, connect to arrow signals
+#		var arrow_node = Globals.boardwalk_arrow_script.new(dict["direction"], dict["position"], dict["destination"])
+#		arrow_node.add_to_group("ui_nodes")
+#		$Control.add_child(arrow_node)
+#		arrow_node.mouse_entered.connect(_on_button_mouse_entered)
+#		arrow_node.mouse_exited.connect(_on_button_mouse_exited)
+#		arrow_node.pressed.connect(_on_arrow_pressed.bind(dict["destination"]))
 
 	# Add portals to map
 	for dict in portal_data:			
@@ -57,9 +57,9 @@ func load_map(index):
 	$ParallaxLayer/Background.texture = map_data.get_background_texture()
 	
 	
-
-func _on_arrow_pressed(destination:int):
-	emit_signal("change_overworld_setting", destination)
+#
+#func _on_arrow_pressed(destination:int):
+#	emit_signal("change_overworld_setting", destination)
 
 func _on_portal_pressed(destination:int, subgame:int):
 	emit_signal("enter_portal", destination, subgame)

@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bar64p403aeed"]
-
-[node name="Toy" type="RigidBody2D"]
-mass = 0.05
-metadata/icon_region = Rect2(112, 128, 28, 28)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-11, -3, -11, -1, -9, 2, 9, 2, 11, -1, 11, -3, 9, -1, -9, -1)

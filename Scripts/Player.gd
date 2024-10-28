@@ -23,7 +23,7 @@ class_name Player
 	"mouse_tail_length":5,
 	"mouse_tail_action":0
 }
-@export var active_map_idx:int=0
+@export var active_map_idx:int=4
 @export var active_map_type:String="Exterior"
 @export var previous_map_idx:int=0
 @export var current_subgame:int=0

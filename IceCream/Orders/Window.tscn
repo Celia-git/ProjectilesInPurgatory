@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ihejbhjs311r"]
-
-[ext_resource type="Script" path="res://IceCream/Orders/Window.gd" id="1_l2d7o"]
-
-[node name="Window" type="Node2D"]
-script = ExtResource("1_l2d7o")
