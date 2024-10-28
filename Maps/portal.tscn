@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://w4ym3rr3g7r6"]
-
-[node name="portal" type="Button"]
-text = "portal"
