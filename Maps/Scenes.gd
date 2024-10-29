@@ -16,10 +16,7 @@ var game_states
 # Index of this scene among settings
 var setting_index:int
 
-# Called when the node enters the scene tree for the first time.
-func _ready():# Connect to interaction signals
-	if !get_node("Control").gui_input.is_connected(_on_control_gui_input):
-		get_node("Control").gui_input.connect(_on_control_gui_input)
+
 	
 func dialog_finished():
 	return
@@ -53,3 +50,4 @@ func _on_control_gui_input(event):
 func _enter_portal():
 	emit_signal("enter_portal", setting_index)
 	
+

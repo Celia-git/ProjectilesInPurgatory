@@ -79,9 +79,13 @@ func set_new_active_scene(idx):
 	# Set new background and pixelframe color
 	set_current_background(idx)
 	emit_signal("update_ui_color", ui_color)
+	pixel_world.get_sub_game().transfer_carry_overs()
+	
 	# Update sub scene
 	active_scene_idx = idx
-
+	
+	pixel_world.get_sub_game().transfer_carry_overs()
+	pixel_world.get_sub_game().new_round()
 
 func set_portal():
 	var portal = load(portal_scene_path).instantiate()

@@ -42,7 +42,9 @@ func _add_main_scene():
 		main.call_deferred("queue_free")
 	# Add main map to tree
 	main = load_script.get_setting(player.get_active_map_idx(), player.get_active_map_type())
-	
+
+	add_child(main)
+
 	if !main.display_text.is_connected(_display_text):
 		main.display_text.connect(_display_text)
 	if !main.terminate_dialog.is_connected(_terminate_dialog):
@@ -67,13 +69,17 @@ func _add_main_scene():
 		pixel_frame_visible = false
 #		if !main.change_overworld_setting.is_connected(_change_overworld_setting):
 #			main.change_overworld_setting.connect(_change_overworld_setting)
+#		if !main.tree_exiting.is_connected(_save_scene_data.bind(player.get_current_subgame())):
+#			main.tree_exiting.connect(_save_scene_data.bind(player.get_current_subgame()))
+
+	
+
+	if is_instance_of(main, InteriorScenes):
+		main.set_new_active_scene(player.get_current_subgame())
 		
 	main.setting_index = player.get_active_map_idx()
 	
-	add_child(main)
 	
-	if is_instance_of(main, InteriorScenes):
-		main.set_new_active_scene(player.get_current_subgame())
 	
 	_set_pixel_frame_visibility()
 
@@ -200,13 +206,15 @@ func _load_game_file():
 #	$CanvasLayer/Profile.just_saved=true
 #	$CanvasLayer/Profile.show_profile(image)
 
-# Game Closing, save player stats
+ #Game Closing, save player stats
 #func _save_game(terminate):
-#
-#	# Save player data from profile (user edits name, settings)
-#	var profile = $CanvasLayer/Profile
-#
-#
+
+	
+
+	# Save player data from profile (user edits name, settings)
+	# var profile = $CanvasLayer/Profile
+
+
 #	player.set_settings(profile.get_player_settings())
 #
 #	# Save screenshot from current main scene
@@ -243,17 +251,7 @@ func _load_game_file():
 #		_load_game_file(new_name)
 	
 
-# Save all mini game data on scene close
-func _save_game(setting_idx):
-	if main != null and !load_script.game_data_saved:
-		main.save_game()
-		load_script.save_game_data(Globals.game_states)
-		player.set_current_subgame(setting_idx)
 
-	if main != null and !load_script.player_data_saved:
-		load_script.terminate_next = true
-		load_script.save_player(player)
-		load_script.save_game_data(Globals.game_states)
 		
 # Emitted by main scene when player interacts for first time
 func _game_not_saved():
@@ -268,8 +266,12 @@ func _game_not_saved():
 # Save all mini game data on scene close
 func _save_scene_data(setting_idx):
 	if main != null and !load_script.game_data_saved:
+		
+		load_script.terminate_next = false
 		load_script.save_game_data(Globals.game_states)
 		player.set_current_subgame(setting_idx)
+		load_script.save_player(player)	
+
 
 # When LoadStates has finished saving each component, terminate or continue
 func _save_finished(terminate):

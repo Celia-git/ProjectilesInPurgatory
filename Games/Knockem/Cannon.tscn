@@ -6,6 +6,7 @@
 [node name="Cannon" type="Node2D" groups=["Cannon"]]
 texture_filter = 1
 script = ExtResource("1_iswq1")
+metadata/ship_cannon = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_g4uk0")

@@ -161,3 +161,6 @@ func _ring_exit_active_layer():
 func _on_tree_exiting():
 	if ring !=null:
 		ring.call_deferred("queue_free")
+
+func transfer_carry_overs():
+	pass

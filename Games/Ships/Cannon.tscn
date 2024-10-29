@@ -43,6 +43,7 @@ animations = [{
 [node name="Cannon" type="Node2D"]
 position = Vector2(0, -32)
 script = ExtResource("1_sm18r")
+metadata/ship_cannon = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_l1bs6")

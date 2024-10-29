@@ -10,6 +10,13 @@ var cannon=null
 var label_path = "res://Assets/GamesInt"
 var labels = ["KnockemLabel.png", "RingtossLabel.png", "ShipyardLabel.png"]
 
+# Called when the node enters the scene tree for the first time.
+func _ready():# Connect to interaction signals
+	if !get_node("Control").gui_input.is_connected(_on_control_gui_input):
+		get_node("Control").gui_input.connect(_on_control_gui_input)
+#	super._ready()
+	update_score()
+
 func set_ui_color():
 	ui_color = Color.DARK_RED
 	
@@ -67,14 +74,16 @@ func set_new_active_scene(idx):
 			
 		2: # Shipyard
 			hori_progress.visible = true
-
 	super.set_new_active_scene(idx)
 	if idx==0 or idx==2:
 		pixel_world.get_sub_game().transfer_carry_overs()
 	pixel_world.get_sub_game().new_round()
 	
+
+
+	
 # Set game variables on the control level
-func _set_game_value(setting:String, value:Variant=""):
+func _set_game_value(setting:String, value:int=0):
 	
 	match setting:
 		"vertical progress":
@@ -84,7 +93,8 @@ func _set_game_value(setting:String, value:Variant=""):
 		"radial progress":
 			radial_progress.value = value
 		"score":
-			score.text = str(value)
+			Globals.game_states.games["tickets"]+=value
+			update_score()
 		"win":
 			# Show win alert
 			alert.get_node("Label").text = "You WIN!"
@@ -127,7 +137,7 @@ func _on_carryover_nodes_child_entered_tree(node):
 		cannon = node
 		
 		# Connect shipyard cannon to signals		
-		if active_scene_idx==2:
+		if node.get_meta("ship_cannon"):
 			if !node.launch.is_connected(_launch_cannon):
 				cannon.launch.connect(_launch_cannon)
 
@@ -199,3 +209,7 @@ func _shift_ship_cannon_down():
 func _shift_ship_cannon_up():
 	if cannon:
 		cannon.move_up()
+
+# Updates the score graphic on screen
+func update_score():
+	score.text = str(Globals.game_states.games["tickets"])
